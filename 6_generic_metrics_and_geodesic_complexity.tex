@@ -191,66 +191,129 @@ which $Z\to B$ has a continuous section.
 \end{lemma}
 
 \begin{proof}
-Choose $N+1$ smooth real-valued functions
-$f_0,\ldots,f_N$ on $E$ generically, using
-the compact-open $C^\infty$ topology.
-Consider a local sheet system over an open
-set in $B$ and a fixed exact $k$-fiber
-stratum. For each $j$, the equalities of
-values of $f_j$ on the active $k$ sheets
-define partitions $\mathcal P_j$ of the sheets.
-Set
-\[
- r_j=k-|\mathcal P_j|.
-\]
-The equalities defining each partition impose
-$r_j$ independent scalar equations on the
-space of sheet values. Parametric
-transversality, applied to all local sheet
-systems, strata and partitions, gives
-\begin{equation}\label{eq:selection-inequality}
- \sum_{j=0}^{N}r_j\leq N-k+1.
-\end{equation}
-Here countable local charts and compact
-exhaustions reduce the genericity assertion
-to countably many open dense conditions
-on the Baire space of smooth functions.
+Write $d_k=\dim B_k\leq N-k+1$. We first
+choose $N+1$ smooth functions
+$f_0,\ldots,f_N:E\to\R$ with a simultaneous
+general-position property on all the strata.
 
-At $b\in B$ define
+Fix $k$ and a point of $B_k$. Since $q$ is a
+covering and $Z\to B$ is proper with finite
+fibers, after shrinking a neighborhood of the
+point we can enumerate the $k$ active sheets
+by smooth local sections of $q$. Restricting
+these sections to $B_k$, we obtain smooth
+maps $z_1,\ldots,z_k$ with pairwise disjoint
+images in $E$. For a tuple
+$f=(f_0,\ldots,f_N)$, consider the evaluation
+map
 \[
- c(b)=k(b)-1+\sum_{j=0}^N r_j(b).
+ F_f:B_k\longrightarrow (\R^k)^{N+1},
+ \qquad
+ F_f(b)=\bigl((f_j(z_i(b)))_{i=1}^{k}
+                  \bigr)_{j=0}^{N}.
 \]
-By \eqref{eq:selection-inequality},
-$0\leq c(b)\leq N$.
+For each collection
+$\mathcal P=(\mathcal P_0,\ldots,\mathcal P_N)$
+of partitions of $\{1,\ldots,k\}$, let
+$D_{\mathcal P}\subset(\R^k)^{N+1}$ be
+the linear subspace imposing equality of
+coordinates inside each block of
+$\mathcal P_j$, for each $j$. Its codimension
+is
+\[
+ \operatorname{codim}D_{\mathcal P}
+ =\sum_{j=0}^N(k-|\mathcal P_j|).
+\]
+The parametrized evaluation map
+$(f,b)\mapsto F_f(b)$ is a submersion in the
+function variables: values at the finitely
+many distinct points $z_i(b)$ can be
+perturbed independently with disjointly
+supported smooth bump functions on $E$.
+Parametric transversality therefore gives
+a residual set of tuples $f$ for which
+$F_f$ is transverse to every
+$D_{\mathcal P}$ on the chosen chart.
+
+There are only finitely many partitions for
+each $k$, and countably many sheets and
+charts suffice to cover the second-countable
+strata $B_k$. Using compact exhaustions
+and the Baire property of the space of
+smooth functions on $E$, choose one tuple
+$f$ transverse to all these diagonals
+simultaneously. When
+$\operatorname{codim}D_{\mathcal P}>d_k$,
+transversality implies that
+$F_f^{-1}(D_{\mathcal P})$ is empty.
+Consequently, at every $b\in B_k$, if
+$\mathcal P_j(b)$ is the partition of the
+active $k$ sheets according to equality of
+their $f_j$-values, then
+\begin{equation}\label{eq:selection-inequality}
+ \sum_{j=0}^N
+ \bigl(k-|\mathcal P_j(b)|\bigr)
+ \leq d_k\leq N-k+1.
+\end{equation}
+
+Define
+\[
+ c(b)=k(b)-1+
+ \sum_{j=0}^N
+ \bigl(k(b)-|\mathcal P_j(b)|\bigr).
+\]
+Thus $0\leq c(b)\leq N$.
 The vectors
 \[
  (f_0(z),\ldots,f_N(z)),\qquad z\in Z_b,
 \]
-are pairwise distinct. Otherwise a pair
-of sheets would have equal values for
-all $N+1$ functions, giving
-$\sum r_j\geq N+1$, contrary to
-\eqref{eq:selection-inequality}.
-Choose the unique active sheet with the
-lexicographically smallest such vector.
+are pairwise distinct. Otherwise two
+active sheets would have equal values for
+all $N+1$ functions, forcing each term
+$k-|\mathcal P_j|$ to be at least one,
+contrary to \eqref{eq:selection-inequality}.
+Hence there is a unique lexicographically
+smallest vector, determining a selected
+sheet over each $b$.
 
-The function $c$ is upper semicontinuous.
-Indeed, near a fixed point the active sheets
-form a subset of those present at the point
-and each equality partition can only refine
-after restriction to the surviving sheets.
-Thus $c$ cannot increase near the point.
-The sets $\{c=j\}$, $0\leq j\leq N$,
-are locally closed. Moreover, if $c$ is
-locally constant along one of these sets,
-the number of active sheets and all
-equality partitions must be locally
-constant there: any loss of a sheet or
-splitting of an equality strictly lowers
-$c$. Therefore the lexicographic choice
-varies continuously on $\{c=j\}$.
-These $N+1$ locally closed sets give the
-required partition.
+We verify that the selection is continuous
+on the sets $A_j=\{b:c(b)=j\}$.
+Fix $b$ and enumerate all $k(b)$ active
+sheets in a covering neighborhood $U$.
+Properness of $Z\to B$ and closedness of
+$Z\subset E$ allow $U$ to be chosen so
+that every active sheet at $b'\in U$
+is among these enumerated sheets.
+Furthermore, pairs with unequal
+$f_j$-values at $b$ remain unequal after
+shrinking $U$. Therefore, as $b'\to b$,
+the number of active sheets cannot
+increase, and each equality partition can
+only split or lose elements. More precisely,
+for every $j$ the nonnegative integer
+$k(b')-|\mathcal P_j(b')|$ cannot exceed
+its value at $b$, and $k(b')\leq k(b)$.
+Hence $c$ is upper semicontinuous.
+
+Since $c$ is integer-valued with range
+$\{0,\ldots,N\}$, each
+\[
+ A_j=\{c\geq j\}\cap\{c<j+1\}
+\]
+is locally closed and thus locally compact.
+If $b'\in A_{c(b)}$ is sufficiently near
+$b$, equality in the above monotonicity
+forces the same active sheets to persist
+and all equality partitions to remain
+unchanged. In particular, the
+lexicographically smallest sheet is
+locally constant as a sheet index along
+$A_{c(b)}$. Its corresponding covering
+section varies continuously there.
+The disjoint locally closed sets
+$A_0,\ldots,A_N$ therefore give the
+required partition and continuous
+sections.
 \end{proof}
 
 \begin{theorem}\label{thm:generic-GC}
