@@ -78,58 +78,92 @@ locus with $k=N+1$ is finite.
 \end{theorem}
 
 \begin{proof}
-Fix a negatively curved metric $g_0$.
-Use compact fundamental regions in $X\times X$
-and properness of the deck action to obtain,
-for metrics sufficiently close to $g_0$,
-a finite list of label configurations that
-could be simultaneously minimizing at any point.
-The diagonal need not be included, since a
-pair $(x,x)$ has exactly one minimizing geodesic
-(the constant geodesic) and the injectivity
-radius is uniformly positive in a neighborhood
-of $g_0$.
+Fix $g_0\in\mathcal R_-(M)$ and a compact set
+$K\subset\widetilde M$ whose deck translates cover
+$\widetilde M$. In a sufficiently small $C^\infty$
+neighborhood $\mathcal U$ of $g_0$, the lifted metrics
+are uniformly bilipschitz to $g_0$, with constant
+arbitrarily close to one. Properness of the deck action
+and compactness of $K$ therefore give a finite set
+$F\subset\Gamma$ such that every minimizing label
+at a point of $K\times K$, for every $g\in\mathcal U$,
+belongs to $F$. Enlarge $F$, if necessary, to include
+all labels whose lengths differ from the minimum by at
+most a fixed small allowance. All possible simultaneous
+minima are thus drawn from finitely many subsets of $F$.
 
-For each finite configuration $S$, consider the
-universal length-difference map in a product
-of a neighborhood of $g_0$ and the endpoint
-coordinates. By Lemma~\ref{lem:metric-submersion}
-it is a submersion at every point where all
-labels of $S$ are minimizing. By compactness,
-finitely many local metric variations suffice
-to retain this submersion property on a
-neighborhood of the compact set of such points.
-For each configuration, finite-dimensional
-parametric transversality now gives a dense
-set of nearby metrics for which the zero set
-is transverse to zero at every point where
-the labels are simultaneously minimizing.
-Only finitely many configurations occur
-locally in the metric space, so their
-conditions may be imposed simultaneously.
-This proves density.
+For a subset $S=\{a_0,\ldots,a_{k-1}\}\subset F$ with
+$k\geq2$, consider on the locus where the branches
+are smooth the universal difference map
+\[
+ \mathcal F_S(g,u,v)
+ =\bigl(L_{a_1}^g-L_{a_0}^g,\ldots,
+        L_{a_{k-1}}^g-L_{a_0}^g\bigr).
+\]
+At a point where all labels in $S$ are minimizing,
+Lemma~\ref{lem:metric-submersion} makes
+$\mathcal F_S$ a submersion in the metric parameter
+directions. This property is open: after choosing
+the finitely many metric variations supplied by the
+lemma, their length-variation matrix remains
+surjective on a neighborhood of that point.
 
-For openness, suppose regular metrics $g_j$
-converge to a fixed regular metric $g$ while
-some $g_j$ fails regularity. Passing to a
-subsequence, place the problematic endpoint
-pairs in compact fundamental regions and fix
-their minimizing label configurations.
-They converge to a simultaneous minimum for
-$g$ with those labels. The relevant
-distance-difference differentials converge
-by smooth dependence of geodesics, so failure
-of full rank in the limit contradicts
-regularity of $g$. Hence regularity is open.
+For the fixed base metric $g_0$, the simultaneous
+minimum locus associated with $S$ in $K\times K$ is
+compact. Cover it by finitely many such neighborhoods
+and collect the metric variations from these
+neighborhoods. Their span is a finite-dimensional
+space of smooth symmetric two-tensors. Shrink the
+metric-parameter ball so that the resulting metrics
+remain negatively curved. On a neighborhood of the
+simultaneous-minimum locus, the corresponding
+finite-parameter map $\mathcal F_S$ is transverse
+to zero. On the compact complement of that
+neighborhood, simultaneous minimization for $S$
+is excluded by a strictly positive length gap;
+after a further shrinking of the parameter ball,
+it remains excluded. Thus finite-dimensional
+parametric transversality produces arbitrarily
+small perturbations for which the fixed-label
+difference map is transverse to zero at every
+simultaneous minimum for $S$.
 
-At a regular pair with $k$ minimizing labels
-the implicit function theorem gives the
-codimension $k-1$ stratum. The remaining
-labels have a strict length gap locally,
-so there are no extra minimizing branches.
-The dimension inequality gives $k\leq N+1$.
-The top locus is a compact discrete subset
-of $M\times M$, and therefore finite.
+Repeat the construction for the finitely many
+subsets $S\subset F$ and take the span of all
+the resulting metric variations. Transversality
+for one configuration is stable under adjoining
+the other parameters, because the earlier
+surjective parameter directions remain available.
+The parametric transversality theorem, applied
+to all configurations simultaneously, gives
+metrics arbitrarily close to $g_0$ satisfying
+the regularity condition. This proves density.
+
+For openness, suppose $g_j\to g$ and that every
+$g_j$ is nonregular, whereas $g$ is regular.
+After putting the corresponding lifts of endpoint
+pairs in $K\times K$, the finite-label reduction
+allows us to pass to a subsequence with a fixed
+set $S$ of at least two minimizing labels witnessing
+failure of full rank. Compactness gives a limit
+$(u,v)$ at which all labels in $S$ still minimize
+for $g$. The non-full-rank condition is closed
+under convergence of the differentials, contradicting
+regularity of $g$. Hence regular metrics form an
+open subset.
+
+At a regular pair with exactly $k$ minimizing
+labels, the implicit function theorem cuts out
+the equal-length locus with codimension $k-1$.
+All other labels have a positive length gap in a
+small neighborhood, so this is also the local
+exact-multiplicity stratum. The inequality
+$k-1\leq N$ follows from full rank. The stratum
+of multiplicity $N+1$ has dimension zero.
+It is closed, since the existence of at least
+$N+1$ minimizing labels is a closed condition
+under the finite-label reduction; compactness
+of $M\times M$ then makes it finite.
 \end{proof}
 
 We next establish a selection result for minimizing branches on the multiplicity strata.
