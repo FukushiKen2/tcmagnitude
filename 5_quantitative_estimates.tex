@@ -1,0 +1,229 @@
+\section{A quantitative exterior seminorm}
+\label{sec:seminorm}
+
+We prove the estimate in Theorem~\ref{thm:intro-estimate}.
+Throughout this section $M$ is closed, oriented and negatively
+curved, of dimension $n\geq2$. Write $B=M\times M$,
+$G=\Gamma\times\Gamma$, $N=2n$, and
+\[
+ V_k=(\bigwedge^k I_{\R})_G,\qquad I_{\R}=I\otimes\R.
+\]
+
+\subsection{The quotient seminorm}
+
+For an ordered tuple of labels put
+\[
+ u(a_0,\ldots,a_k)
+ =[(a_1-a_0)\wedge\cdots\wedge(a_k-a_0)]
+ \in V_k.
+\]
+Define
+\begin{equation}\label{eq:delta-norm}
+ \|z\|_\Delta=
+ \inf\left\{\sum_{j=1}^{r}|t_j|:
+ z=\sum_{j=1}^{r}t_j
+    u(a_{j,0},\ldots,a_{j,k})\right\}.
+\end{equation}
+The infimum is over finite expressions. This is a
+possibly degenerate seminorm, not an asserted norm.
+
+Let $Q=|Y|/G$, where $Y$ is the full simplex on
+$\Gamma$. Endow the cellular chain complex of
+$Q$ with the quotient $\ell^1$-seminorm assigning
+cost one to each oriented simplex orbit.
+
+\begin{lemma}\label{lem:isometric-image}
+The injection
+$\iota_k:H_k(Q;\R)\hookrightarrow V_k$
+from Lemma~\ref{lem:cycle-injective} preserves
+the quotient $\ell^1$-seminorm:
+\[
+ \|\iota_k[z]\|_\Delta
+ =\inf\{\|c\|_1:\partial c=0,\ [c]=[z]\}.
+\]
+In particular, if $\beta:\Gamma^{k+1}\to\R$
+is a bounded alternating $G$-invariant cocycle,
+it induces a linear functional on $V_k$, and
+\begin{equation}\label{eq:dual-pairing}
+ |\langle\beta,z\rangle|
+ \leq\|\beta\|_\infty\|z\|_\Delta.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:exterior-quotient},
+$V_k$ is the quotient of $C_k(Y;\R)_G$
+by $\partial C_{k+1}(Y;\R)_G$. The generators
+in \eqref{eq:delta-norm} are exactly the
+images of the oriented simplex generators.
+If $z$ is a cycle, every chain with the same
+image in this quotient differs from it by a
+boundary, and therefore is again a cycle.
+Thus the infima defining both seminorms agree.
+
+An alternating invariant cocycle vanishes
+on cellular boundaries, so it defines a
+functional on the quotient, of norm bounded
+by its supremum norm. This proves
+\eqref{eq:dual-pairing}.
+\end{proof}
+
+\begin{lemma}\label{lem:upper-norm}
+For the class
+$A_M=\mathfrak a_N\frown[B]$ one has
+\[
+ \|A_M\|_\Delta\leq\|B\|.
+\]
+\end{lemma}
+
+\begin{proof}
+Use a singular fundamental cycle of $B$ whose
+$\ell^1$-norm is arbitrarily close to $\|B\|$.
+The bar comparison followed by $T_N$ in
+Proposition~\ref{prop:comparison} sends each
+oriented singular simplex to an exterior
+generator with coefficient of absolute
+value at most one. Therefore the induced
+chain map is nonexpanding in the $\ell^1$-norm.
+Taking the infimum proves the inequality.
+\end{proof}
+
+\subsection{An orientation cocycle}
+
+By the bounded-cohomological dual description of
+simplicial volume \cite{Gromov1982}, for every
+$\epsilon>0$ there is a bounded alternating
+homogeneous $n$-cocycle $\omega$ on $\Gamma$
+representing the real orientation class,
+normalized by
+\begin{equation}\label{eq:orientation-norm}
+ \langle[\omega],[M]\rangle=1,\qquad
+ \|\omega\|_\infty\leq\|M\|^{-1}+\epsilon.
+\end{equation}
+Negative curvature ensures $\|M\|>0$.
+Pull $\omega$ back to $G$ along the two
+projections and denote the resulting cocycles by
+$A=p_1^*\omega$ and $B'=p_2^*\omega$.
+We write $B'$ to distinguish this cocycle
+from the manifold $B=M\times M$.
+
+\subsection{Odd-dimensional estimate}
+
+Assume first that $n$ is odd.
+Consider the $N$-cocycle on $G$
+\[
+ \alpha=\frac12(A\smile B'-B'\smile A).
+\]
+Its restriction to $\Delta\Gamma$ is identically
+zero as a cochain. The cup-product sup-norm
+estimate gives
+\[
+ \|\alpha\|_\infty\leq\|\omega\|_\infty^2.
+\]
+Since $n$ is odd, graded commutativity
+in ordinary cohomology gives
+\[
+ \langle[\alpha],[M\times M]\rangle=1.
+\]
+By Theorem~\ref{thm:bounded-lift}, $\alpha$
+lifts to a bounded alternating invariant
+$N$-cocycle $\beta$ on $\Gamma^{N+1}$, with
+\[
+ \|\beta\|_\infty
+ \leq N(N+1)!\,\|\omega\|_\infty^2.
+\]
+The bar comparison of Proposition
+\ref{prop:comparison}, followed by
+\eqref{eq:dual-pairing}, gives
+\[
+ 1=|\langle\beta,A_M\rangle|
+ \leq N(N+1)!\|\omega\|_\infty^2
+       \|A_M\|_\Delta.
+\]
+Letting $\epsilon\downarrow0$ yields
+\begin{equation}\label{eq:odd-bound}
+ \|A_M\|_\Delta\geq
+ \frac{\|M\|^2}{2n(2n+1)!}.
+\end{equation}
+
+\subsection{Even-dimensional estimate}
+
+Now assume $n$ is even and set
+\[
+ D=B'-A\in C_b^n(G).
+\]
+As cochains, $D|_{\Delta\Gamma}=0$.
+Theorem~\ref{thm:bounded-lift} supplies a
+bounded alternating invariant cocycle
+$\widetilde D$ on $\Gamma^{n+1}$
+with $\pi^*[\widetilde D]=[D]$.
+
+For the explicit bound we use the retraction
+$r:G\to\Delta\Gamma$, $(g,h)\mapsto(g,g)$,
+in the initial prism of Lemma
+\ref{lem:relative-primitive}. In that prism,
+the summands involving $p_1^*\omega$ vanish:
+at the transition between $r(g_i,h_i)$ and
+$(g_i,h_i)$ the first-coordinate arguments
+repeat, and $\omega$ is alternating.
+Hence only the $p_2^*\omega$ terms contribute.
+The primitive therefore has norm at most
+$n\|\omega\|_\infty$, rather than
+$2n\|\omega\|_\infty$.
+The remaining horizontal and vertical
+contractions give
+\begin{equation}\label{eq:Dtilde-bound}
+ \|\widetilde D\|_\infty
+ \leq n(n+1)!\|\omega\|_\infty.
+\end{equation}
+
+Define a bounded alternating invariant
+$N$-cocycle on $\Gamma$ by
+\[
+ \beta=-\frac12
+ \operatorname{Alt}(\widetilde D\smile\widetilde D),
+\]
+where $\operatorname{Alt}$ denotes normalized
+alternation (average over permutations with
+sign). Since normalized alternation has norm
+at most one and induces the identity in
+cohomology with real coefficients,
+\[
+ \|\beta\|_\infty
+ \leq\frac12 n^2((n+1)!)^2
+       \|\omega\|_\infty^2.
+\]
+The cohomology class of $\pi^*\beta$ equals
+$-\frac12[D]^2$. In ordinary cohomology
+of $M\times M$, dimensional reasons give
+$[A]^2=[B']^2=0$ and, since $n$ is even,
+$[A]\smile[B']=[B']\smile[A]$. Consequently
+\[
+ -\frac12[D]^2=[A]\smile[B']
+ \quad\text{in }H^{2n}(M\times M;\R),
+\]
+so $\langle\pi^*[\beta],[M\times M]\rangle=1$.
+The same bar comparison and duality as before
+now yield
+\begin{equation}\label{eq:even-bound}
+ \|A_M\|_\Delta\geq
+ \frac{2\|M\|^2}{n^2((n+1)!)^2}.
+\end{equation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:intro-estimate}]
+The upper bound is Lemma~\ref{lem:upper-norm}.
+The lower bound is \eqref{eq:odd-bound}
+when $n$ is odd and \eqref{eq:even-bound}
+when $n$ is even. Since $\|M\|>0$,
+the class $A_M$ is nonzero. Thus
+$\mathfrak a_{2n}$ is nonzero as well.
+\end{proof}
+
+\begin{remark}
+The constants are explicit rather than optimal.
+Our argument does not show
+$\|A_M\|_\Delta=\|M\times M\|$.
+In particular, it does not prove equality
+between the cellular seminorm of the nerve
+and the simplicial volume of the product.
+\end{remark}
