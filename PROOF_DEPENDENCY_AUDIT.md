@@ -33,7 +33,7 @@ The first inequality uses localization (Section 7), the second bounded-cohomolog
 ### Branch III: other conclusions
 
 15. **[Sec. 2, prop:MH-minimal]** Minimal-length degree-two endpoint magnitude homology equals augmentation kernel of the minimizing-label set, rank m_g(x,y)-1; the proof uses magnitude boundaries in degrees 2 and 3.
-16. **[Sec. 6, lem:selection and thm:generic-GC]** GC<=2n+1 from continuous sheet selection on locally closed strata; TC<=GC and the known TC value imply equality. This branch is *not* needed for the quantitative count.
+16. **[Sec. 6, thm:finite-cover-selection and thm:generic-GC]** GC<=2n+1 from continuous sheet selection on locally closed strata; TC<=GC and the known TC value imply equality. This branch is *not* needed for the quantitative count.
 17. **[Updated 2026-11-25]** The final equality between GC and maximal magnitude rank now uses Horja's established existence theorem for at least 2n+1 minimizing geodesics, together with the regularity upper bound. It no longer depends on the quantitative counting theorem.
 
 ## External prior work affecting novelty
@@ -48,3 +48,7 @@ The first inequality uses localization (Section 7), the second bounded-cohomolog
 - Proven internal *formal implications*: (A) if the bounded lifting and comparison claims hold, the cup-product estimates imply the c_n lower bound; (B) if genericity and localization hold, the nerve cycle implies ||A_M||_Delta<=#C_g.
 - High-priority remaining independent checks: (i) norm-controlled bounded-cohomology lifting with the chosen cochain conventions; (ii) comparison of the exterior canonical class with the geometric nerve's fundamental cycle, including local-coefficient orientation; (iii) parametric transversality/stratification across metric variations; (iv) mathematical and bibliographic novelty of quadratic quantitative bound.
 - Avoid claiming the entire manuscript has been fully validated merely because the arithmetic constants or double-complex signs are consistent.
+
+## Finite-cover selection verification (2026-11-25)
+
+The former `lem:selection` was promoted to `thm:finite-cover-selection`, with a precise hypothesis that each nonempty exact-cardinality stratum is an embedded smooth submanifold. The proof is also available independently in `FINITE_VALUED_COVER_SELECTION.md`. It uses general-position smooth auxiliary functions, diagonal-partition codimensions, and an upper-semicontinuous integer coloring whose level sets are locally closed. This establishes the abstract selection theorem under its stated hypotheses. The **separate** assertion that the regular metrics are open and dense has not been certified by this selection proof. Bibliographic novelty of the general theorem also remains to be checked.
