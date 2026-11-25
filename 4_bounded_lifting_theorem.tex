@@ -256,95 +256,110 @@ required $b_0$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:bounded-lift}]
-Form the first-quadrant double complex $D^{p,q}$
-with horizontal differential $\delta$ in the
-$S$-variables and vertical differential $d_G$
-in the group variables. Use total differential
-$d_{\rm tot}=\delta+(-1)^p d_G$ on bidegree $(p,q)$.
-
-Lemma~\ref{lem:horizontal-contraction} identifies
-the total cohomology with $H_b^\bullet(G)$ by
-the augmentation $\jmath$, with inverse
-induced by the comparison map $R$.
-Moreover the vertical degree-zero cocycles
-$\ker(d_G:D^{p,0}\to D^{p,1})$ are precisely
-the bounded alternating invariant functions
-$A^p$ on $S^{p+1}$. On this bottom row $R$
-is the coset pullback defining $\rho$.
-
-By Lemma~\ref{lem:bounded-vertical}, all positive
-vertical cohomology in columns $p\geq1$ vanishes.
-At $p=0$ the vertical cohomology is
-$H_b^\bullet(H;\R)$, by restricting to the vertex
-$H$ and applying the standard homogeneous resolution.
-It follows, in positive degrees, that the image
-of the edge map equals the kernel of restriction
-to $H$. In the stated range $k\geq2$ this
-also follows directly by the following cochain
-construction.
-
-Suppose first that $\alpha|_H=0$ as a cochain.
-Lemma~\ref{lem:relative-primitive} yields
-$b_0\in D^{0,k-1}$ with $d_G b_0=\alpha$ and
-$\|b_0\|\leq k\|\alpha\|$. Subtract its total
-coboundary to obtain a cocycle concentrated
-in bidegree $(1,k-1)$, namely the appropriate
-signed horizontal coboundary of $b_0$.
-Apply the norm-one vertical contraction of
-Lemma~\ref{lem:bounded-vertical}, subtract the
-resulting total coboundary, and continue.
-At stage $p$ the horizontal differential
-increases the norm by at most $p+2$,
-and the vertical contraction does not increase it.
-More explicitly, write $a_0=\jmath\alpha$.
-With $d_Gb_0=a_0$ put $a_1=-\delta b_0$.
-Inductively, for $1\leq p<k$, take
-$b_p=(-1)^p h_pa_p$, so
-$d_Gb_p=(-1)^p a_p$, and put
-$a_{p+1}=-\delta b_p$. Here $h_p$ is
-the vertical contraction in column $p$.
-At every stage, $\delta a_p=0$ and
-$d_Ga_p=0$ when $p\geq1$; the identities
-follow inductively from anticommutation in
-the total complex and $\delta^2=0$.
-Thus $a_p-d_{\rm tot}b_p=a_{p+1}$.
-At the final stage $\beta=a_k\in D^{k,0}$
-satisfies both $d_G\beta=0$ and
-$\delta\beta=0$. Consequently $\beta$
-is independent of the group variables
-and belongs to $A^k$.
-The bound is
+We use the first-quadrant double complex
+$D^{p,q}$ with horizontal differential
+$\delta$ and vertical differential $d_G$, and
+total differential $d_{\mathrm{tot}}=
+\delta+(-1)^pd_G$ on $D^{p,q}$.
+The horizontal contraction in
+Lemma~\ref{lem:horizontal-contraction}
+shows that $\jmath:C_b^\bullet(G)\to
+\operatorname{Tot}D$ is a quasi-isomorphism.
+The map $R$ of Lemma~\ref{lem:AW-comparison}
+is a cochain left inverse to $\jmath$.
+In particular, a cocycle in
 \[
- \|\beta\|\leq
- k\cdot2\cdot3\cdots(k+1)\|\alpha\|
- =k(k+1)!\|\alpha\|.
+ A^p=\ker(d_G:D^{p,0}\to D^{p,1})
 \]
-The two cocycles differ by a total coboundary,
-so they induce the same class in $H_b^k(G)$.
-The comparison with the usual bounded bar complex
-is the explicit cochain map $R$ of
-Lemma~\ref{lem:AW-comparison}. It sends the
-initial cocycle, viewed as constant in the
-$S$-variable, to $\alpha$ itself, and sends
-the terminal bottom-row cocycle to its
-coset pullback. Thus the cohomology classes
-agree under the specified map, with no
-unspecified sign convention.
+has image under $R$ equal to its coset
+pullback.
 
-Finally, if the restriction of $[\alpha]$ to $H$
-vanishes merely in cohomology, choose a bounded
-$H$-invariant primitive on $H$ and extend it to a
-bounded $G$-invariant homogeneous cochain as follows:
-on a tuple contained in a common left coset $gH$,
-translate the tuple by $g^{-1}$ and evaluate the
-primitive; on all other tuples, set the extension
-to zero. The construction is independent of the
-choice of $g$ and preserves the supremum bound.
-Subtracting its coboundary produces a representative
-whose restriction vanishes on the cochain level.
-Conversely any cocycle pulled back from $S$
-restricts to zero on $H$, since all its
-$S$-vertices coincide. This proves
+First suppose that $\alpha\in C_b^k(G)$
+is a cocycle whose restriction to $H^{k+1}$
+vanishes as a cochain. Write
+$a_0=\jmath\alpha\in D^{0,k}$.
+Lemma~\ref{lem:relative-primitive}
+provides $b_0\in D^{0,k-1}$ with
+\[
+ d_Gb_0=a_0,\qquad
+ \|b_0\|_\infty\leq k\|\alpha\|_\infty.
+\]
+Set $a_1=-\delta b_0\in D^{1,k-1}$.
+Then $a_0-d_{\mathrm{tot}}b_0=a_1$,
+and $\delta a_1=d_Ga_1=0$.
+
+For $1\leq p<k$, suppose inductively
+that $a_p\in D^{p,k-p}$ is closed under
+both $\delta$ and $d_G$. Its vertical
+degree $k-p$ is positive, so
+Lemma~\ref{lem:bounded-vertical}
+gives a primitive
+\[
+ b_p=(-1)^ph_pa_p\in D^{p,k-p-1},
+ \qquad d_Gb_p=(-1)^pa_p,
+ \qquad \|b_p\|_\infty\leq\|a_p\|_\infty.
+\]
+Put $a_{p+1}=-\delta b_p$. Then
+\[
+ a_p-d_{\mathrm{tot}}b_p=a_{p+1},
+ \qquad
+ \delta a_{p+1}=0,
+ \qquad
+ d_Ga_{p+1}=0.
+\]
+The last identity follows from
+$d_G\delta=\delta d_G$ and
+$\delta a_p=0$. By induction
+$a_k\in D^{k,0}$ is closed under
+both differentials, so it is an element
+$\beta\in A^k$ with $\delta\beta=0$.
+Summing the displayed total-coboundary
+identities and applying $R$ proves
+$[\pi^*\beta]=[\alpha]$.
+
+On $D^{p,q}$ the horizontal coboundary
+has operator norm at most $p+2$.
+Consequently
+\[
+ \|\beta\|_\infty
+ \leq (k+1)!\|b_0\|_\infty
+ \leq k(k+1)!\|\alpha\|_\infty.
+\]
+
+Now suppose only that
+$[\alpha]|_H=0$ in bounded cohomology.
+There is a bounded homogeneous
+$H$-invariant $(k-1)$-cochain
+$\theta$ on $H$ with
+$d_G\theta=\alpha|_{H^{k+1}}$.
+Define a bounded homogeneous
+$G$-invariant cochain $\widehat\theta$
+on $G^k$ as follows. If all its
+arguments lie in a common left coset
+$tH$, set
+\[
+ \widehat\theta(th_0,\ldots,th_{k-1})
+    =\theta(h_0,\ldots,h_{k-1});
+\]
+otherwise set its value to zero.
+This is well-defined: replacing $t$
+by $th$ translates all arguments
+of $\theta$ simultaneously by $h^{-1}$,
+and $\theta$ is $H$-invariant.
+The resulting cochain is bounded
+and $G$-invariant. Thus
+$\alpha'=\alpha-d_G\widehat\theta$
+has zero cochain restriction to $H$.
+Applying the first part to $\alpha'$
+gives a cocycle in $A^k$ mapping to
+$[\alpha]$.
+
+Conversely, any alternating cocycle on
+$S$ pulls back to a cocycle vanishing
+on $H^{k+1}$, because all those
+arguments have coset $H$. Hence
+$\operatorname{im}\rho^k$ is exactly
+the restriction kernel, proving
 \eqref{eq:bounded-image}.
 \end{proof}
 
