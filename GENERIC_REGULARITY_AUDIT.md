@@ -53,3 +53,12 @@ At a regular point with exactly k minimizing labels, the other labels have a loc
 3. In Step 4 Sard's theorem is applied in an **open subset of the universal endpoint manifold XxX**, not to a nonsmooth-boundary fundamental domain KxK.
 4. This verification is a formal mathematical audit, not a proof of originality; the literature on generic cut locus and Maxwell strata should still be compared.
 5. A separate final check remains: the proof of the finite-valued covering selection theorem and the standard literature computation TC(M)=2n+1 must be correct for the stated GC corollary.
+
+
+## Literature overlap found 2026-11-25 (important)
+
+Kupka, Peixoto and Pugh, *Focal stability of Riemann metrics*, J. reine angew. Math. **593** (2006), 31–72, DOI 10.1515/CRELLE.2006.029, develops generic transversality and multiplicity bounds for geodesics of equal length between endpoints. Reported sharpened bounds include at most \(2m+1\) equal-length geodesics joining distinct points on a compact \(m\)-manifold for generic metrics; check the exact hypotheses and proof in the original before asserting a precise theorem. This overlaps substantially with the geometric genericity portion of Section 6 (where only minimizing geodesics are used). The current manuscript must not claim novelty for generic length-multiplicity alone without a theorem-by-theorem comparison.
+
+A second background source is Itoh–Sakai on cut loci and the generic-metric singularity-theory literature. Neither source has yet been established to imply the **finite-valued covering selection theorem** or the particular geodesic-complexity equality. Separate validity of the selection proof from novelty of the general-position input.
+
+The general selection theorem, the generic-regularity claim, and the GC equality should remain separate components in the dependency audit.
