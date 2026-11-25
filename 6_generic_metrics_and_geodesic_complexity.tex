@@ -1,0 +1,273 @@
+\section{Generic metrics and geodesic complexity}
+\label{sec:generic}
+
+We establish the general-position statements used above and
+give an upper bound for geodesic complexity.
+Throughout, $N=2n=\dim(M\times M)$.
+All metrics in this section have negative sectional curvature.
+
+\subsection{Smooth distance branches}
+
+Let $g$ be a negatively curved metric on $M$.
+The lifted metric on $X=\widetilde M$ is complete,
+simply connected and has no conjugate points.
+For $(u,v)$ with $u\ne av$, the distance branch
+$L_a(u,v)=d_X(u,av)$ is smooth.
+Moreover, in a sufficiently small finite-dimensional
+smooth family of negatively curved metrics, the branches
+$L_a$ vary smoothly in the metric parameters and endpoints:
+the unique connecting geodesics vary smoothly by the
+geodesic equation and nondegeneracy of the endpoint map.
+We use this smoothness only off the diagonal $x=y$,
+where different minimizing labels cannot tie.
+
+Two distinct minimizing geodesics from $x$ to $y$
+have disjoint interiors. Indeed, if they shared an
+interior point, swapping their initial and final
+segments would again give a shortest broken path.
+A globally minimizing path cannot have a corner,
+so uniqueness for the geodesic equation forces
+the geodesics to coincide.
+
+\begin{lemma}\label{lem:metric-submersion}
+Suppose $a_0,\ldots,a_{k-1}$ represent distinct
+minimizing geodesics from $x$ to $y$.
+There are smooth variations of the metric,
+supported in pairwise disjoint neighborhoods
+of interior points of these geodesics, whose
+first variations of their lengths form an
+invertible diagonal matrix. Consequently,
+the universal map
+\[
+ (g,u,v)\longmapsto
+ (L_{a_1}-L_{a_0},\ldots,L_{a_{k-1}}-L_{a_0})
+\]
+is a submersion at a simultaneous minimum.
+\end{lemma}
+
+\begin{proof}
+Choose an interior point of each geodesic not
+lying on any other minimizing geodesic, and
+a nonnegative smooth cutoff $\chi_i$ supported
+in a small neighborhood of that point.
+Use the symmetric two-tensor variation
+$h_i=\chi_i g$. The first variation of the
+length of a geodesic with fixed endpoints is
+\[
+ D_g L_{a_j}(h_i)
+ =\frac12\int_{\gamma_j}
+    h_i(\dot\gamma_j,\dot\gamma_j)\,ds.
+\]
+The integral is positive for $i=j$ and
+vanishes for $i\ne j$, by disjointness of
+the supports. Taking the differences with
+the $a_0$ branch gives independent
+variations in the target.
+\end{proof}
+
+\subsection{Genericity}
+
+\begin{theorem}\label{thm:genericity}
+The set of regular metrics is open and dense
+in $\mathcal R_-(M)$.
+For a regular metric, the locus of pairs with
+exactly $k$ minimizing geodesics is locally a
+smooth submanifold of codimension $k-1$.
+No such pairs exist when $k>N+1$, and the
+locus with $k=N+1$ is finite.
+\end{theorem}
+
+\begin{proof}
+Fix a negatively curved metric $g_0$.
+Use compact fundamental regions in $X\times X$
+and properness of the deck action to obtain,
+for metrics sufficiently close to $g_0$,
+a finite list of label configurations that
+could be simultaneously minimizing at any point.
+The diagonal need not be included, since a
+pair $(x,x)$ has exactly one minimizing geodesic
+(the constant geodesic) and the injectivity
+radius is uniformly positive in a neighborhood
+of $g_0$.
+
+For each finite configuration $S$, consider the
+universal length-difference map in a product
+of a neighborhood of $g_0$ and the endpoint
+coordinates. By Lemma~\ref{lem:metric-submersion}
+it is a submersion at every point where all
+labels of $S$ are minimizing. By compactness,
+finitely many local metric variations suffice
+to retain this submersion property on a
+neighborhood of the compact set of such points.
+For each configuration, finite-dimensional
+parametric transversality now gives a dense
+set of nearby metrics for which the zero set
+is transverse to zero at every point where
+the labels are simultaneously minimizing.
+Only finitely many configurations occur
+locally in the metric space, so their
+conditions may be imposed simultaneously.
+This proves density.
+
+For openness, suppose regular metrics $g_j$
+converge to a fixed regular metric $g$ while
+some $g_j$ fails regularity. Passing to a
+subsequence, place the problematic endpoint
+pairs in compact fundamental regions and fix
+their minimizing label configurations.
+They converge to a simultaneous minimum for
+$g$ with those labels. The relevant
+distance-difference differentials converge
+by smooth dependence of geodesics, so failure
+of full rank in the limit contradicts
+regularity of $g$. Hence regularity is open.
+
+At a regular pair with $k$ minimizing labels
+the implicit function theorem gives the
+codimension $k-1$ stratum. The remaining
+labels have a strict length gap locally,
+so there are no extra minimizing branches.
+The dimension inequality gives $k\leq N+1$.
+The top locus is a compact discrete subset
+of $M\times M$, and therefore finite.
+\end{proof}
+
+\subsection{Choosing a minimizing branch on strata}
+
+We recall that $\GC(M,g)$ is the minimum
+number of locally compact pieces partitioning
+$B=M\times M$, each with a continuous choice
+of minimizing geodesic, using the unreduced
+convention of \cite{RecioMitter2021}.
+The following selection argument is useful
+more generally for a finite-valued covering
+with clean multiplicity strata.
+
+\begin{lemma}\label{lem:selection}
+Let $B$ be a smooth $N$-manifold and let
+$q:E\to B$ be a covering map. Suppose
+$Z\subset E$ is closed, the restriction
+$Z\to B$ is proper and surjective with
+finite fibers, and the exact $k$-fiber
+stratum $B_k$ is a smooth manifold of
+dimension at most $N-k+1$.
+Then $B$ admits a partition into at most
+$N+1$ locally closed subsets on each of
+which $Z\to B$ has a continuous section.
+\end{lemma}
+
+\begin{proof}
+Choose $N+1$ smooth real-valued functions
+$f_0,\ldots,f_N$ on $E$ generically, using
+the compact-open $C^\infty$ topology.
+Consider a local sheet system over an open
+set in $B$ and a fixed exact $k$-fiber
+stratum. For each $j$, the equalities of
+values of $f_j$ on the active $k$ sheets
+define partitions $\mathcal P_j$ of the sheets.
+Set
+\[
+ r_j=k-|\mathcal P_j|.
+\]
+The equalities defining each partition impose
+$r_j$ independent scalar equations on the
+space of sheet values. Parametric
+transversality, applied to all local sheet
+systems, strata and partitions, gives
+\begin{equation}\label{eq:selection-inequality}
+ \sum_{j=0}^{N}r_j\leq N-k+1.
+\end{equation}
+Here countable local charts and compact
+exhaustions reduce the genericity assertion
+to countably many open dense conditions
+on the Baire space of smooth functions.
+
+At $b\in B$ define
+\[
+ c(b)=k(b)-1+\sum_{j=0}^N r_j(b).
+\]
+By \eqref{eq:selection-inequality},
+$0\leq c(b)\leq N$.
+The vectors
+\[
+ (f_0(z),\ldots,f_N(z)),\qquad z\in Z_b,
+\]
+are pairwise distinct. Otherwise a pair
+of sheets would have equal values for
+all $N+1$ functions, giving
+$\sum r_j\geq N+1$, contrary to
+\eqref{eq:selection-inequality}.
+Choose the unique active sheet with the
+lexicographically smallest such vector.
+
+The function $c$ is upper semicontinuous.
+Indeed, near a fixed point the active sheets
+form a subset of those present at the point
+and each equality partition can only refine
+after restriction to the surviving sheets.
+Thus $c$ cannot increase near the point.
+The sets $\{c=j\}$, $0\leq j\leq N$,
+are locally closed. Moreover, if $c$ is
+locally constant along one of these sets,
+the number of active sheets and all
+equality partitions must be locally
+constant there: any loss of a sheet or
+splitting of an equality strictly lowers
+$c$. Therefore the lexicographic choice
+varies continuously on $\{c=j\}$.
+These $N+1$ locally closed sets give the
+required partition.
+\end{proof}
+
+\begin{theorem}\label{thm:generic-GC}
+For every regular negatively curved metric
+on $M$ one has
+\[
+ \GC(M,g)\leq 2n+1.
+\]
+If $M$ is closed and oriented, then
+\[
+ \GC(M,g)=\TC(M)=2n+1
+\]
+and
+\[
+ \GC(M,g)
+ =1+\max_{x\ne y}
+   \operatorname{rank}\MH_{2,d_M(x,y)}(M;x,y).
+\]
+\end{theorem}
+
+\begin{proof}
+Let $E\to B$ be the covering whose fiber
+over $(x,y)$ consists of fixed-endpoint
+homotopy classes of paths, equivalently
+the labels of lifts. Let $Z$ be the subset
+corresponding to minimizing geodesics.
+The map $Z\to B$ is closed and proper with
+finite fibers, by compactness of $M$ and
+properness of the universal covering action.
+The exact multiplicity strata are smooth
+of dimension $N-k+1$, by
+Theorem~\ref{thm:genericity}.
+Apply Lemma~\ref{lem:selection}. A continuous
+selection of a minimizing label gives a
+continuous minimizing geodesic, because
+the corresponding lifted geodesic depends
+smoothly on its endpoints. Thus
+$\GC(M,g)\leq N+1$.
+
+The inequality $\TC(M)\leq\GC(M,g)$ is
+standard \cite{RecioMitter2021}. The
+known calculation of topological complexity
+for torsion-free hyperbolic groups
+\cite{Dranishnikov2020}, translated into
+our unreduced convention, gives
+$\TC(M)=N+1$. Hence equality holds.
+
+By Theorem~\ref{thm:intro-count}, the top
+multiplicity locus is nonempty, and by
+Proposition~\ref{prop:MH-minimal} the
+maximum degree-two minimal-length magnitude
+homology rank is exactly $N$.
+This proves the last equality.
+\end{proof}
