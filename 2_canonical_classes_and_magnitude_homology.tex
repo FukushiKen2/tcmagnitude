@@ -1,0 +1,237 @@
+\section{Canonical classes and magnitude homology}
+\label{sec:canonical}
+
+Throughout the paper $M$ is a connected closed negatively curved
+Riemannian manifold of dimension $n\geq2$, $\Gamma=\pi_1(M)$, and
+$G=\Gamma\times\Gamma$. We use integral coefficients unless indicated
+otherwise. The definitions in this section require considerably less
+geometry than negative curvature.
+
+\subsection{The Costa--Farber class}
+
+The endpoint fibration of an aspherical space can be compared with
+the covering corresponding to the diagonal subgroup
+$\Delta\Gamma\leq G$; see \cite{CostaFarber2010}.
+Let $P=\Z[\Gamma]$ with the $G$-action
+\[
+ (g,h)a=gah^{-1}.
+\]
+Write $I=\ker(\varepsilon:P\to\Z)$.
+The augmentation sequence is an extension of $G$-modules:
+\begin{equation}\label{eq:augmentation}
+ 0\longrightarrow I\longrightarrow P
+ \xrightarrow{\varepsilon}\Z\longrightarrow0.
+\end{equation}
+Its connecting class is
+$\mathfrak v\in H^1(G;I)$. With the inhomogeneous convention
+for group cochains, $\mathfrak v$ is represented by
+\begin{equation}\label{eq:canonical-cocycle}
+ c(g,h)=(g,h)\cdot1-1=gh^{-1}-1.
+\end{equation}
+In particular, the restriction of $\mathfrak v$ to
+$\Delta\Gamma$ vanishes.
+
+For each $k\geq1$, let
+$q_k:I^{\otimes k}\to\bigwedge^k I$ be the quotient
+mapping pure tensors to exterior products. Define
+\begin{equation}\label{eq:exterior-class}
+ \mathfrak a_k=q_{k*}(\mathfrak v^k)
+ \in H^k(G;\bigwedge^k I).
+\end{equation}
+We emphasize that $q_k$ is the exterior quotient, not the
+unnormalized alternating sum. No factorial occurs in
+\eqref{eq:exterior-class}.
+
+\subsection{The full simplex and exterior augmentation}
+
+Let $Y$ be the full simplicial complex on the vertex set $\Gamma$.
+Its oriented simplicial chain group in degree $k$ is
+\[
+ C_k(Y;\Z)=\bigwedge^{k+1}P.
+\]
+The augmentation of $P$ induces a contraction
+\[
+ \iota_\varepsilon:\bigwedge^{k+1}P
+ \longrightarrow\bigwedge^kP,\quad
+ \iota_\varepsilon(a_0\wedge\cdots\wedge a_k)
+ =\sum_{i=0}^{k}(-1)^i
+   a_0\wedge\cdots\widehat{a_i}\cdots\wedge a_k,
+\]
+which is exactly the simplicial boundary.
+
+\begin{lemma}\label{lem:exterior-quotient}
+For $k\geq1$ there is a natural $G$-equivariant exact sequence
+\[
+ C_{k+1}(Y)\xrightarrow{\partial}C_k(Y)
+ \xrightarrow{T_k}\bigwedge^kI\longrightarrow0,
+\]
+where
+\[
+ T_k[a_0,\ldots,a_k]
+ =(a_1-a_0)\wedge\cdots\wedge(a_k-a_0).
+\]
+Consequently
+$C_k(Y)/\partial C_{k+1}(Y)\cong\bigwedge^kI$.
+\end{lemma}
+
+\begin{proof}
+Choose any $a_*\in\Gamma$ and split the underlying abelian
+group as $P=\Z a_*\oplus I$. Then
+\[
+ \bigwedge^{k+1}P
+ = (a_*\wedge\bigwedge^kI)\oplus\bigwedge^{k+1}I.
+\]
+Contraction with $\varepsilon$ sends $a_*\wedge w$ to $w$
+and vanishes on $\bigwedge^{k+1}I$.
+The image of the contraction in degree $k+1$ is
+$\bigwedge^{k+1}I$, which is precisely the kernel of
+contraction in degree $k$. Thus contraction induces the
+claimed quotient. The displayed expression for $T_k$
+follows by expressing all vertices as
+$a_0+(a_i-a_0)$ and expanding the wedge.
+Although the splitting is not equivariant, the resulting map is.
+\end{proof}
+
+Write $Q=|Y|/G$ and
+$\mathcal V_k=(\bigwedge^k I)_G$.
+The action has no inversions on simplices: if an element
+permuted a finite set of vertices, some positive power would
+fix each of them; the unique-root property for torsion-free
+hyperbolic groups then forces each vertex to have been fixed
+already. The cellular chains of $Q$ therefore identify with
+$C_k(Y)_G$. Passing to coinvariants in the lemma gives a
+map from cellular cycles to $\mathcal V_k$.
+
+\begin{lemma}\label{lem:cycle-injective}
+The assignment
+\[
+ \iota_k:H_k(Q;\Z)\longrightarrow\mathcal V_k,\qquad
+ [z]\longmapsto[T_k(z)]
+\]
+is well-defined and injective for $k\geq1$.
+\end{lemma}
+
+\begin{proof}
+The definition is independent of boundaries by
+$T_k\partial=0$. Exactness of coinvariants applied to
+Lemma~\ref{lem:exterior-quotient} identifies
+$\mathcal V_k$ with
+$C_k(Y)_G/\partial C_{k+1}(Y)_G$.
+The homology group $H_k(Q)$ is the subgroup of that
+quotient represented by cycles, proving injectivity.
+\end{proof}
+
+\begin{proposition}\label{prop:comparison}
+Let $B=M\times M$ and suppose $M$ is oriented.
+If $f:B\to Q$ is the map obtained from a $G$-equivariant
+map $\widetilde M^2\to Y$, then, for each $k$,
+the image under $\iota_k$ of the homological comparison
+$f_*:H_k(B)\to H_k(Q)$ is the cap-product evaluation
+of $\mathfrak a_k$, with the usual local-coefficient
+identifications. In particular,
+\begin{equation}\label{eq:A-comparison}
+ \iota_{2n}f_*[B]
+ =\mathfrak a_{2n}\frown[B].
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The homogeneous bar construction gives an explicit
+comparison map from a free $G$-resolution to the augmented
+simplex chains: a bar simplex $(g_0,\ldots,g_k)$ is sent
+to $[g_0\cdot1,\ldots,g_k\cdot1]$.
+Its image under $T_k$ is
+\[
+ (g_1\cdot1-g_0\cdot1)\wedge\cdots\wedge
+ (g_k\cdot1-g_0\cdot1).
+\]
+The cup product of the cocycle \eqref{eq:canonical-cocycle}
+evaluates on the corresponding bar simplex as the wedge
+of consecutive differences. Their transformation into
+the differences from the first vertex is unit triangular,
+so their wedge products coincide. This proves equality
+on bar chains; any equivariant map from a free resolution
+is equivariantly chain-homotopic to the comparison map.
+The cap-product assertion follows.
+\end{proof}
+
+\subsection{Magnitude homology at the shortest length}
+
+We use the magnitude chain complex of Leinster--Shulman
+\cite{LeinsterShulman2021}. For endpoints $x,y$ and a
+length $\ell$, write $C_{k,\ell}(M;x,y)$ for the free
+abelian group generated by proper chains
+\[
+ (x=x_0,x_1,\ldots,x_k=y),
+ \qquad \sum_{i=1}^k d(x_{i-1},x_i)=\ell.
+\]
+The differential deletes an internal point only when it
+lies metrically between its neighbors. See also the
+interval-poset description in \cite{KanetaYoshinaga2021}.
+
+\begin{proposition}\label{prop:MH-minimal}
+Let $x\ne y$ in a complete negatively curved manifold $M$,
+and assume the number $m_g(x,y)$ of minimizing geodesics
+is finite. Then there is an isomorphism
+\[
+ \MH_{2,d(x,y)}(M;x,y)
+ \cong\ker\bigl(\Z[S_g(u,v)]
+               \xrightarrow{\varepsilon}\Z\bigr).
+\]
+In particular,
+\[
+ \operatorname{rank}\MH_{2,d(x,y)}(M;x,y)
+ =m_g(x,y)-1.
+\]
+\end{proposition}
+
+\begin{proof}
+Write $d=d(x,y)>0$. A chain of total length $d$
+must be ordered along a minimizing geodesic, by equality
+in the triangle inequality. A point $z\ne x,y$ occurring
+in $(x,z,y)$ determines exactly one minimizing geodesic:
+the two minimizing segments splice without a corner,
+because their concatenation is globally minimizing,
+and the geodesic equation has unique solutions.
+Conversely every minimizing geodesic contains such points.
+
+Now $C_{1,d}(M;x,y)=\Z(x,y)$, and
+\[
+ \partial_2(x,z,y)=-(x,y).
+\]
+The differential in degree three on a chain
+$(x,z,w,y)$, where $z$ precedes $w$ along a
+minimizing geodesic, is
+\[
+ \partial_3(x,z,w,y)
+ =-(x,w,y)+(x,z,y).
+\]
+Every pair of internal points on the same minimizing
+geodesic can be related using such boundaries, taking
+a common later point if necessary. There are no
+degree-three boundaries relating interior points of
+distinct minimizing geodesics, because all chains
+of total length $d$ lie on a single minimizing
+geodesic. Hence
+\[
+ C_{2,d}/\operatorname{im}\partial_3
+ \cong\Z[S_g(u,v)]
+\]
+and the induced differential is minus augmentation.
+Taking its kernel proves the result.
+\end{proof}
+
+For a minimizing-label set $S$ write
+$I(S)=\ker(\Z[S]\to\Z)$. The proposition identifies
+the local coefficient $I(S)$ with magnitude homology;
+the inclusion $I(S)\hookrightarrow I$ is natural
+after lifts have been chosen. This is the local-to-global
+map used in the localization theorem below.
+
+\begin{remark}
+The endpoint-fixed statement is made only for $x\ne y$.
+The diagonal has length zero and a different chain complex.
+No identification of magnitude homology with the entire
+simplicial nerve is asserted: the correspondence here
+is specifically in degree two and at the minimal length.
+\end{remark}
