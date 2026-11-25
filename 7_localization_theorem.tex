@@ -148,6 +148,76 @@ sign. The product appearing in
 \eqref{eq:localization} is therefore unchanged.
 \end{proof}
 
+\begin{proposition}\label{prop:endpoint-reversal}
+Let $J:\bigl(\bigwedge^N I\bigr)_G\to
+\bigl(\bigwedge^N I\bigr)_G$ be the involution
+induced by the additive map
+\[
+ \Z[\Gamma]\longrightarrow\Z[\Gamma],
+ \qquad a\longmapsto a^{-1}.
+\]
+For $b=(x,y)\in C_g$, write
+\[
+ \tau_b=\epsilon_b
+ \big[(a_1-a_0)\wedge\cdots\wedge(a_N-a_0)\big].
+\]
+Then the reversed pair $b^{\mathrm{op}}=(y,x)$
+also belongs to $C_g$, and
+\begin{equation}\label{eq:endpoint-reversal}
+ \tau_{b^{\mathrm{op}}}=(-1)^n J(\tau_b).
+\end{equation}
+In particular $\#C_g$ is even and
+\[
+ J(A_M)=(-1)^n A_M.
+\]
+More precisely, $A_M$ lies in the image of
+$1+(-1)^n J$ on the integral coinvariant module.
+\end{proposition}
+
+\begin{proof}
+The inversion map sends the action
+$(g,h)\cdot a=gah^{-1}$ to the action with
+the two group coordinates interchanged:
+\[
+ (gah^{-1})^{-1}=h a^{-1}g^{-1}.
+\]
+It therefore induces the stated involution
+on coinvariants and their exterior powers.
+
+Choose lifts $u,v$ of $x,y$, and label the
+minimizing geodesics by
+$a_0,\ldots,a_N$. For the reversed endpoints
+choose lifts $v,u$ and labels
+$a_0^{-1},\ldots,a_N^{-1}$. The equality
+\[
+ d_X(v,a_i^{-1}u)=d_X(u,a_iv)
+\]
+shows that the reversed length-difference
+map is the original length-difference map
+composed with the endpoint swap
+$T(u,v)=(v,u)$. On the $N=2n$ dimensional
+product, $T$ has orientation degree
+$(-1)^{n^2}=(-1)^n$. Hence the two
+determinant signs satisfy
+\[
+ \epsilon_{b^{\mathrm{op}}}
+ =(-1)^n\epsilon_b.
+\]
+Combining this with inversion of the
+exterior generator gives
+\eqref{eq:endpoint-reversal}.
+
+The diagonal consists only of pairs joined
+by one minimizing geodesic, so reversal acts
+freely on $C_g$. The cardinality is even.
+Summing \eqref{eq:endpoint-reversal}
+over all points and using the localization
+formula proves the eigenspace identity.
+Selecting one point from each reversal
+orbit also expresses $A_M$ as
+$(1+(-1)^nJ)$ applied to an integral element.
+\end{proof}
+
 The local exterior terms admit a description in magnitude homology.
 
 At each $b=(x,y)\in C_g$ the label set has
