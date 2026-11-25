@@ -33,3 +33,20 @@ The first inequality requires the Section 2 canonical comparison, Section 3 nerv
 ## Verdict
 
 The manuscript has a coherent two-result structure, with GC calculation independent of the quantitative cohomology/localization branch. The main counting theorem is **not yet independently referee-verified**, chiefly because the bounded-lift and global class-comparison steps require more detailed certification. Do not label the entire paper submission-ready on the strength of Section 6 alone.
+
+## Focused cochain-level recheck (later 2026-11-25)
+
+**Concrete correction:** Section 2 previously claimed the cocycle identity for t_k using the coboundary of t_(k-1), with a sum over i=0,...,k. This proves a different cochain identity. The correct expression is
+
+```
+sum_{i=0}^{k+1} (-1)^i t_k(g_0,...,hat{g_i},...,g_{k+1})
+ = T_k boundary[g_0 e,...,g_{k+1} e] = 0.
+```
+
+Corrected in Section 2, commit da94123. This is an indexing error in the proof, not counterevidence to the cocycle statement.
+
+**AW comparison spot checks:** The formula R_(p,q)f(g_0,...,g_(p+q))=f(g_0H,...,g_pH;g_p,...,g_(p+q)) satisfies the cochain identity in bidegrees (0,0) and (1,0); the terms at the overlapping index cancel with opposite signs. This supports but does not constitute a full certification of the double-complex quasi-isomorphism.
+
+**Vertical contraction:** The sign-equivariance under a setwise stabilizer K_sigma with character chi_sigma is consistent with left-invariant averaging: h f(k g_0,...)=chi_sigma(k) h f(g_0,...). A complete proof must still explain choosing a mean on G invariant under K_sigma's left action, and verify homotopy identities globally. The bounded-lift theorem remains a proof priority.
+
+**No new theorem announced:** This check resolved one source-level algebraic error and isolated remaining tasks. It does not justify treating Section 4 or the entire quantitative theorem as referee-certified.
