@@ -62,3 +62,16 @@ Kupka, Peixoto and Pugh, *Focal stability of Riemann metrics*, J. reine angew. M
 A second background source is Itoh–Sakai on cut loci and the generic-metric singularity-theory literature. Neither source has yet been established to imply the **finite-valued covering selection theorem** or the particular geodesic-complexity equality. Separate validity of the selection proof from novelty of the general-position input.
 
 The general selection theorem, the generic-regularity claim, and the GC equality should remain separate components in the dependency audit.
+
+
+## Original-source comparison added 2026-11-25
+
+**Kupka–Peixoto–Pugh (2006), *Focal stability of Riemann metrics*, J. reine angew. Math. 593, 31–72, DOI 10.1515/CRELLE.2006.029** is now cited in the article's bibliography, introduction, and Section 6.
+
+The original abstract and Theorem 1.2 state: on a compact m-manifold, for a residual set of metrics, there are at most **2m+2** geodesics of any given equal length joining any pair p,q (including p=q). **Section 7 explicitly sharpens this to 2m+1 when p != q**. The distinction is important: reporting 2m+1 as the unrestricted uniform bound is inaccurate. The article also comments that negative curvature makes the proof more directly global, thanks to uniqueness in homotopy classes, smooth endpoint dependence, and absence of self-intersections upstairs.
+
+Comparison of proven statements:
+- KPP: residual generic metrics, all (possibly nonminimizing) geodesics with the same given length, bound 2m+2 universally and 2m+1 for distinct endpoints; analyses the multiexponential map and transversality.
+- Current Section 6: a claimed **open dense** set within strictly negatively curved metrics, for which the *simultaneously minimizing distance branches* have full rank \(k-1\); this implies smooth strata of exact minimum multiplicity, a finite top stratum, and an upper bound on geodesic complexity using the separately proved finite-valued covering selection theorem.
+- A count-only KPP bound does not establish Section 6's full-rank condition, even though its ideas substantially overlap. Check the full KPP transversality constructions before claiming novelty of the stronger geometric statement.
+- Targeted searches of published GC work (Recio-Mitter and Mescher–Stegemeyer, including cut locus fibered-decomposition bounds) did not reveal the exact generic-negative-curvature GC equality. This is an incomplete novelty survey, not proof of absence.
