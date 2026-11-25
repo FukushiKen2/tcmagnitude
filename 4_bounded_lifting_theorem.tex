@@ -1,0 +1,228 @@
+\section{A bounded cohomological lifting theorem}
+\label{sec:bounded}
+
+The quantitative estimate will use bounded cochains on a
+transitive $G$-set. We give a norm-controlled lifting argument.
+The construction is related to resolutions and relative bounded
+cohomology; compare the bounded-cohomological framework of
+\cite{Gromov1982}. No assertion of novelty for this general
+cohomological mechanism is needed in the applications below.
+
+\subsection{Homogeneous and coset cochains}
+
+Let $G$ be a discrete group, $H\leq G$, and $S=G/H$.
+The homogeneous complex of bounded real cochains on $G$ is
+\[
+ C_b^q(G)=\ell^\infty(G^{q+1};\R)^G.
+\]
+We also consider
+\[
+ A^p=\ell^\infty_{\mathrm{alt}}(S^{p+1};\R)^G
+\]
+with the usual alternating simplicial coboundary $\delta$.
+Pullback along $\pi:G\to S$ induces a cochain map
+$A^\bullet\to C_b^\bullet(G)$, hence
+\[
+ \rho^k:H^k(A^\bullet)\longrightarrow H_b^k(G;\R).
+\]
+
+\begin{theorem}\label{thm:bounded-lift}
+Assume that the pointwise stabilizer of any two distinct
+elements of $S$ is amenable. Then for each $k\geq2$
+\begin{equation}\label{eq:bounded-image}
+ \operatorname{im}\rho^k
+ =\ker\bigl(H_b^k(G;\R)\longrightarrow H_b^k(H;\R)\bigr).
+\end{equation}
+More quantitatively, if $\alpha\in C_b^k(G)$ is a
+homogeneous cocycle satisfying
+$\alpha|_{H^{k+1}}=0$, there is a cocycle $\beta\in A^k$
+such that
+\[
+ [\pi^*\beta]=[\alpha],\qquad
+ \|\beta\|_\infty\leq k(k+1)!\|\alpha\|_\infty.
+\]
+\end{theorem}
+
+We first record the bounded contractions used in the proof.
+
+\begin{lemma}\label{lem:bounded-vertical}
+For $p\geq1$, let
+\[
+ D^{p,q}=
+ \ell^\infty_{\mathrm{alt},S}
+ (S^{p+1}\times G^{q+1};\R)^G.
+\]
+The vertical homogeneous coboundary complex
+$D^{p,\bullet}$ has bounded contracting homotopies
+in positive degrees, of norm at most one.
+\end{lemma}
+
+\begin{proof}
+Consider an ordered tuple of pairwise distinct vertices
+$(s_0,\ldots,s_p)$. Its pointwise stabilizer $K$ fixes
+at least two distinct vertices, so is amenable.
+The setwise stabilizer is a finite extension of $K$
+and therefore also amenable. On each orbit of such
+tuples, equivariant cochains are identified with bounded
+cochains on $G^{q+1}$ invariant under the tuple stabilizer,
+with the sign representation accounting for odd vertex
+permutations.
+
+An invariant mean for an amenable stabilizer yields
+the usual norm-one contracting homotopy on the
+homogeneous bounded cochain complex in positive
+degree. Averaging over the finite permutation group,
+or equivalently working with its sign representation,
+preserves the norm bound. Choosing one representative
+per tuple orbit and transporting the contraction gives
+a uniform equivariant homotopy. Alternation forces
+cochains on tuples with repeated vertices to vanish.
+\end{proof}
+
+\begin{lemma}\label{lem:relative-primitive}
+Let $\alpha\in C_b^k(G)$, $k\geq1$, be a bounded
+homogeneous cocycle with zero restriction as a cochain
+to $H^{k+1}$. The corresponding element of
+$D^{0,k}$ admits a vertical primitive $b_0\in
+D^{0,k-1}$ satisfying
+\[
+ d_Gb_0=\alpha,\qquad
+ \|b_0\|_\infty\leq k\|\alpha\|_\infty.
+\]
+\end{lemma}
+
+\begin{proof}
+Choose an $H$-equivariant retraction of sets
+$r:G\to H$ that is the identity on $H$; choose
+representatives of the left $H$-orbits, with the
+representative $1$ for $H$ itself. The standard
+prism homotopy between the identity and $r$ on
+the homogeneous bar complex has, on cochains
+of degree $k$, at most $k$ summands. Consequently
+its operator norm is at most $k$.
+Since $\alpha$ restricts to zero on $H$,
+the prism identity $dK+Kd=\mathrm{id}-r^*$
+gives $d_G(K\alpha)=\alpha$.
+Transporting this primitive from the vertex $H$
+to the other vertices of $G/H$ gives the
+required $b_0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:bounded-lift}]
+Form the first-quadrant double complex $D^{p,q}$
+with horizontal differential $\delta$ in the
+$S$-variables and vertical differential $d_G$
+in the group variables. Use total differential
+$d_{\rm tot}=\delta+(-1)^p d_G$ on bidegree $(p,q)$.
+
+Each fixed vertical degree is horizontally exact
+after augmentation by $C_b^\bullet(G)$:
+the contraction is obtained by inserting the
+vertex $g_0H$ into the tuple of $S$-vertices
+of a cochain evaluated at $(g_0,\ldots,g_q)$.
+It is $G$-equivariant and has norm at most one.
+Thus the total complex computes $H_b^\bullet(G)$,
+and the edge map from the horizontal bottom row
+$A^\bullet=D^{\bullet,0}_{d_G}$ is pullback $\rho$.
+
+By Lemma~\ref{lem:bounded-vertical}, all positive
+vertical cohomology in columns $p\geq1$ vanishes.
+At $p=0$ the vertical cohomology is
+$H_b^\bullet(H;\R)$, by restricting to the vertex
+$H$ and applying the standard homogeneous resolution.
+It follows, in positive degrees, that the image
+of the edge map equals the kernel of restriction
+to $H$. In the stated range $k\geq2$ this
+also follows directly by the following cochain
+construction.
+
+Suppose first that $\alpha|_H=0$ as a cochain.
+Lemma~\ref{lem:relative-primitive} yields
+$b_0\in D^{0,k-1}$ with $d_G b_0=\alpha$ and
+$\|b_0\|\leq k\|\alpha\|$. Subtract its total
+coboundary to obtain a cocycle concentrated
+in bidegree $(1,k-1)$, namely the appropriate
+signed horizontal coboundary of $b_0$.
+Apply the norm-one vertical contraction of
+Lemma~\ref{lem:bounded-vertical}, subtract the
+resulting total coboundary, and continue.
+At stage $p$ the horizontal differential
+increases the norm by at most $p+2$,
+and the vertical contraction does not increase it.
+After $k$ stages we obtain an element
+$\beta\in D^{k,0}$, independent of the group
+variables, which is a horizontal cocycle.
+The bound is
+\[
+ \|\beta\|\leq
+ k\cdot2\cdot3\cdots(k+1)\|\alpha\|
+ =k(k+1)!\|\alpha\|.
+\]
+The two cocycles differ by a total coboundary,
+so they induce the same class in $H_b^k(G)$.
+The edge comparison is concretely given by
+the Alexander--Whitney evaluation
+\[
+ f(s_0,\ldots,s_p;g_0,\ldots,g_q)
+ \longmapsto
+ f(g_0H,\ldots,g_pH;g_p,\ldots,g_{p+q}),
+\]
+with the standard total-complex sign convention.
+
+Finally, if the restriction of $[\alpha]$ to $H$
+vanishes merely in cohomology, first subtract
+the coboundary of a bounded extension of a
+primitive on $H$. This produces a representative
+whose restriction vanishes on the cochain level.
+Conversely any cocycle pulled back from $S$
+restricts to zero on $H$, since all its
+$S$-vertices coincide. This proves
+\eqref{eq:bounded-image}.
+\end{proof}
+
+\subsection{The diagonal subgroup}
+
+For the application let $\Gamma$ be the fundamental group
+of a closed negatively curved manifold and put
+\[
+ G=\Gamma\times\Gamma,\qquad H=\Delta\Gamma.
+\]
+The $G$-set $G/H$ is naturally isomorphic to $\Gamma$,
+with $(g,h)a=gah^{-1}$.
+
+\begin{lemma}\label{lem:diagonal-stabilizers}
+The common stabilizer in $G$ of two distinct labels
+$a,b\in\Gamma$ is isomorphic to
+$C_\Gamma(b^{-1}a)$. Hence it is infinite cyclic.
+\end{lemma}
+
+\begin{proof}
+An element $(g,h)$ fixes $a$ if and only if
+$g=aha^{-1}$; it fixes $b$ as well exactly when
+$h$ commutes with $b^{-1}a$.
+Since $b^{-1}a\ne1$, its centralizer in the
+torsion-free hyperbolic group $\Gamma$ is
+infinite cyclic. This identifies the
+common stabilizer.
+\end{proof}
+
+\begin{corollary}\label{cor:bounded-diagonal}
+For $k\geq2$, every bounded cohomology class on
+$\Gamma\times\Gamma$ restricting trivially to
+$\Delta\Gamma$ is represented by the pullback
+of a bounded alternating invariant cocycle
+on $\Gamma^{k+1}$. A cocycle whose restriction
+vanishes literally admits the norm estimate
+of Theorem~\ref{thm:bounded-lift}.
+\end{corollary}
+
+\begin{remark}
+The norm estimate concerns a cocycle with zero
+cochain restriction. It is not a uniform bound
+in terms of the norm of an arbitrary class in
+the kernel unless a norm-controlled choice of
+relative representative is supplied.
+This distinction is important in Section 5,
+where the cocycles are chosen to vanish
+explicitly on the diagonal.
+\end{remark}
