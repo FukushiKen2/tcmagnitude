@@ -178,19 +178,41 @@ more generally for a finite-valued covering
 with clean multiplicity strata.
 
 \begin{lemma}\label{lem:selection}
-Let $B$ be a smooth $N$-manifold and let
-$q:E\to B$ be a covering map. Suppose
-$Z\subset E$ is closed, the restriction
-$Z\to B$ is proper and surjective with
-finite fibers, and the exact $k$-fiber
-stratum $B_k$ is a smooth manifold of
-dimension at most $N-k+1$.
+Let $B$ be a second-countable smooth $N$-manifold
+(without boundary), let $q:E\to B$ be a smooth
+covering, and let $Z\subset E$ be closed. Assume
+$q|_Z$ is proper and surjective, with nonempty
+finite fibers. For $k\geq1$ put
+\[
+ B_k=\{b\in B:\#(Z\cap q^{-1}(b))=k\}.
+\]
+Assume every nonempty $B_k$ is a smooth
+embedded submanifold of $B$ (not necessarily
+closed), of dimension at most $N-k+1$.
 Then $B$ admits a partition into at most
-$N+1$ locally closed subsets on each of
-which $Z\to B$ has a continuous section.
+$N+1$ pairwise disjoint locally closed subsets
+on each of which $q|_Z$ admits a continuous
+section. In particular, the conclusion does
+not assume that the finite-valued map
+$q|_Z$ is a covering.
 \end{lemma}
 
 \begin{proof}
+Because $q|_Z$ is proper and $Z$ is closed,
+the fiber cardinality $k(b)$ is upper
+semicontinuous. Indeed, given $b\in B$, choose
+an evenly covered neighborhood and disjoint
+local sheets through the finitely many points
+of $Z_b$. Properness excludes any other
+$Z$-points over a sufficiently small
+neighborhood of $b$. Thus nearby fibers
+are subsets of these finitely many sheets.
+Consequently $B_k$ is locally closed;
+the smooth embedded structure assumed in
+the statement is compatible with the
+subspace topology. Moreover $k\leq N+1$
+whenever $B_k$ is nonempty.
+
 Write $d_k=\dim B_k\leq N-k+1$. We first
 choose $N+1$ smooth functions
 $f_0,\ldots,f_N:E\to\R$ with a simultaneous
@@ -301,15 +323,29 @@ $\{0,\ldots,N\}$, each
  A_j=\{c\geq j\}\cap\{c<j+1\}
 \]
 is locally closed and thus locally compact.
-If $b'\in A_{c(b)}$ is sufficiently near
-$b$, equality in the above monotonicity
-forces the same active sheets to persist
-and all equality partitions to remain
-unchanged. In particular, the
-lexicographically smallest sheet is
-locally constant as a sheet index along
-$A_{c(b)}$. Its corresponding covering
-section varies continuously there.
+Fix $b$ and shrink $U$ as above. For
+$b'\in A_{c(b)}\cap U$, all nonnegative
+contributions
+\[
+ k(b')-1,\qquad
+ k(b')-|\mathcal P_j(b')|
+ \quad(0\leq j\leq N)
+\]
+are bounded above by the corresponding
+ones at $b$. Their sums are equal, so
+each contribution agrees. Hence all
+$k(b)$ active sheets persist and the
+equality partitions have not split.
+Every pair of sheet values that was
+unequal at $b$ remains unequal with the
+same sign in a sufficiently small
+neighborhood. Thus the lexicographic
+order between any two distinct evaluation
+vectors is constant along
+$A_{c(b)}\cap U$. Its unique minimum
+therefore belongs to the same covering
+sheet as at $b$, proving continuity
+of the selected section on $A_{c(b)}$.
 The disjoint locally closed sets
 $A_0,\ldots,A_N$ therefore give the
 required partition and continuous
