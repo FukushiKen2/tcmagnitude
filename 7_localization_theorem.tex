@@ -108,9 +108,21 @@ oriented simplices, their coefficients are added.
 By Lemma~\ref{lem:no-inversions}, each open top
 cell of $Q_g$ has an ordinary characteristic
 simplex without vertex permutations. For each open top cell choose its barycenter.
-Its inverse images are isolated points in $C_g$,
-and Lemma~\ref{lem:local-degree} computes their
-Brouwer local degrees. The cellular coefficient
+To identify every inverse image, suppose that
+$\Phi_g(u,v)$ is the barycenter of an $N$-simplex
+with vertices $a_0,\ldots,a_N$. All these labels
+have positive equal weights. No further label
+can have positive weight, since otherwise
+$\mathcal N_g$ would contain a simplex of dimension
+at least $N+1$, contrary to regularity. Since
+at least one label must minimize $L_a$, it is
+among $a_0,\ldots,a_N$; equality of all weights
+then forces all $N+1$ labels to attain the
+minimum. Thus the endpoint pair lies in $C_g$.
+These inverse images are isolated because
+the $N$ length-difference functions have full
+rank there. Lemma~\ref{lem:local-degree} computes
+their Brouwer local degrees. The cellular coefficient
 of the pushforward of the fundamental class
 is the sum of these degrees, by the relative
 homology definition of degree. This reasoning
