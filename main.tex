@@ -1,0 +1,114 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+\numberwithin{equation}{section}
+
+\newcommand{\cat}{\text{cat}}
+\newcommand{\ccat}{\text{ccat}}
+\newcommand{\Int}{\mathrm{Int}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Nov}{\text{Nov}}
+\newcommand{\grad}{\text{grad}}
+\newcommand{\TC}{\text{TC}}
+\newcommand{\GC}{\text{GC}}
+\newcommand{\MH}{\mathrm{MH}}
+\newcommand{\secat}{\text{secat}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\usepackage{docmute}
+\usepackage[
+  unicode,
+  hidelinks,
+  linktoc=all,
+  bookmarksnumbered,
+  hypertexnames=false
+]{hyperref}
+
+\hypersetup{
+  pdftitle={
+    Topological complexity, simplicial volume,
+    and multiplicity of minimizing geodesics
+  },
+  pdfauthor={Kenji Fukushi}
+}
+
+\pdfstringdefDisableCommands{
+  \def\({}
+  \def\){}
+  \def\Sigma{Sigma}
+  \def\times{ x }
+}
+
+\title{
+  Topological complexity, simplicial volume,
+  and multiplicity of minimizing geodesics
+}
+
+\author{Kenji Fukushi}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We study the relationship between topological
+complexity, simplicial volume, and the multiplicity
+of minimizing geodesics on closed negatively
+curved manifolds.
+Using a simplicial complex associated with
+minimizing geodesics, we establish a localization
+formula for the highest exterior power of the
+canonical class of topological complexity.
+The local contributions are interpreted in terms
+of magnitude homology at the minimal length.
+We introduce a seminorm on the exterior
+augmentation module and obtain quantitative
+estimates using bounded cohomology and the
+amenability of centralizers.
+As a consequence, for an open dense set of
+negatively curved metrics on an oriented closed
+manifold of dimension $n$, the number of ordered
+pairs joined by exactly $2n+1$ minimizing
+geodesics admits a lower bound proportional to
+the square of the simplicial volume.
+We also compute geodesic complexity for metrics
+satisfying this general position condition.
+\end{abstract}
+
+%\input{1_introduction.tex}
+
+% \input{2_canonical_classes_and_magnitude_homology.tex}
+
+% \input{3_minimizing_geodesic_nerve.tex}
+
+% \input{4_bounded_lifting_theorem.tex}
+
+% \input{5_quantitative_estimates.tex}
+
+% \input{6_generic_metrics_and_geodesic_complexity.tex}
+
+% \input{7_localization_theorem.tex}
+
+% \input{8_further_remarks.tex}
+
+% \bibliographystyle{plain}
+% \bibliography{references}
+
+\end{document}
