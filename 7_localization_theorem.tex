@@ -45,9 +45,13 @@ $\epsilon_b$.
 Choose a small neighborhood of $b$ and compatible
 lifts so that the only labels with
 $L_a<m+\delta$ are the labels in $S_b$.
-This is possible after shrinking the neighborhood
-and the uniform allowance $\delta$, without
-changing the nerve.
+Indeed, all $N+1$ labels in $S_b$ have strictly
+positive weights at $b$, and retain positive weights
+on a neighborhood by continuity. Since the support
+is a simplex of $\mathcal N_g$ of dimension at most $N$,
+no other label can have positive weight there.
+In particular the originally fixed $\delta$ need not
+be changed.
 
 On this neighborhood the barycentric weights are
 \[
@@ -122,14 +126,25 @@ minimum. Thus the endpoint pair lies in $C_g$.
 These inverse images are isolated because
 the $N$ length-difference functions have full
 rank there. Lemma~\ref{lem:local-degree} computes
-their Brouwer local degrees. The cellular coefficient
-of the pushforward of the fundamental class
-is the sum of these degrees, by the relative
-homology definition of degree. This reasoning
-uses continuous maps and does not require
-the barycenter to be a smooth regular value.
+their Brouwer local degrees. For a top cell $e$ with barycenter $z_e$, the map
+$H_N(Q_g,Q_g^{N-1})\to H_N(Q_g,Q_g\setminus\{z_e\})$
+is the projection onto the oriented cellular generator
+of $e$: excision identifies the latter group with
+$H_N(\R^N,\R^N\setminus\{0\})\cong\Z$.
+The map of pairs induced by $\bar\Phi_g$ sends
+$(B,B\setminus\bar\Phi_g^{-1}(z_e))$ to
+$(Q_g,Q_g\setminus\{z_e\})$.
+Excision at the finitely many preimages identifies
+the source relative group with the direct sum of
+their local orientation groups. The image of $[B]$
+in this direct sum has coefficient one at each point.
+Naturality therefore identifies the cellular coefficient
+with the sum of the local Brouwer degrees.
+This argument requires only continuity.
 The resulting chain is \eqref{eq:nerve-cycle}.
-It is a cycle because $B$ has no boundary.
+It is a cycle because it is the image of an absolute
+homology class in $H_N(Q_g,Q_g^{N-1})$, under the
+cellular identification.
 \end{proof}
 
 We now assemble the local contributions into a global formula.
