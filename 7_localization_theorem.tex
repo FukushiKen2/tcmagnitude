@@ -66,18 +66,31 @@ The barycenter is characterized by the vanishing
 of the $N$ differences in
 \eqref{eq:barycentric-difference}, so its inverse
 image near $b$ is precisely $\{b\}$.
-At $b$, $W=(N+1)\delta>0$ and the derivative
-of the difference-coordinate map is
-$-W^{-1}dF_b$.
+At $b$, $W=(N+1)\delta>0$. Although
+$m=\min_a L_a$, and hence $W$, need not be
+smooth at $b$, the continuous positive factor
+$1/W$ does not affect the local Brouwer degree
+of the map in \eqref{eq:barycentric-difference}.
+Indeed, in local coordinates supplied by the
+inverse function theorem for $F_b$, the
+difference-coordinate map is
+$t\mapsto-t/W(F_b^{-1}(t))$.
+On a sufficiently small ball about the origin,
+this is homotopic through maps with no boundary
+zeros to $t\mapsto-t/W(b)$, by interpolating the
+positive denominator with the constant $W(b)$.
+
 The orientation defined by
 $(\lambda_1-\lambda_0,\ldots,\lambda_N-\lambda_0)$
-agrees with the standard orientation of
-$[a_0,\ldots,a_N]$: the transition matrix
-from $(\lambda_1,\ldots,\lambda_N)$ has
+agrees with the standard simplex orientation:
+the transition matrix from
+$(\lambda_1,\ldots,\lambda_N)$ has
 positive determinant $N+1$.
-Since $N=2n$ is even, the factor $(-1)^N$
-is positive. The local degree is therefore
-$\operatorname{sgn}\det dF_b$.
+Therefore the local degree equals
+$(-1)^N\operatorname{sgn}\det dF_b
+=\operatorname{sgn}\det dF_b$, since $N=2n$.
+No smoothness of $\Phi_g$ across the
+minimum-length strata is required.
 \end{proof}
 
 \begin{lemma}\label{lem:localized-cycle}
@@ -94,15 +107,17 @@ oriented simplices, their coefficients are added.
 \begin{proof}
 By Lemma~\ref{lem:no-inversions}, each open top
 cell of $Q_g$ has an ordinary characteristic
-simplex without vertex permutations. Choose
-the barycenter of each top cell as regular
-value of $\bar\Phi_g$; Lemma
-\ref{lem:local-degree} identifies its inverse
-images and their local degrees.
-The usual cellular description of the pushforward
-of the fundamental class gives the chain
-\eqref{eq:nerve-cycle}. It is a cycle because
-$B$ has no boundary.
+simplex without vertex permutations. For each open top cell choose its barycenter.
+Its inverse images are isolated points in $C_g$,
+and Lemma~\ref{lem:local-degree} computes their
+Brouwer local degrees. The cellular coefficient
+of the pushforward of the fundamental class
+is the sum of these degrees, by the relative
+homology definition of degree. This reasoning
+uses continuous maps and does not require
+the barycenter to be a smooth regular value.
+The resulting chain is \eqref{eq:nerve-cycle}.
+It is a cycle because $B$ has no boundary.
 \end{proof}
 
 We now assemble the local contributions into a global formula.
