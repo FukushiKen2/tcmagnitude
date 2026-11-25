@@ -77,15 +77,34 @@ $A_M=\mathfrak a_N\frown[B]$ one has
 \end{lemma}
 
 \begin{proof}
-Use a singular fundamental cycle of $B$ whose
-$\ell^1$-norm is arbitrarily close to $\|B\|$.
-The bar comparison followed by $T_N$ in
-Proposition~\ref{prop:comparison} sends each
-oriented singular simplex to an exterior
-generator with coefficient of absolute
-value at most one. Therefore the induced
-chain map is nonexpanding in the $\ell^1$-norm.
-Taking the infimum proves the inequality.
+The seminorm in \eqref{eq:delta-norm} is the quotient
+of the $\ell^1$-norm on the free real vector space
+on ordered $(N+1)$-tuples of labels, modulo the
+$G$-coinvariant and simplex-boundary relations.
+By Hahn--Banach duality for seminormed spaces,
+$\|A_M\|_\Delta$ is the supremum of
+$|\lambda(A_M)|$ over functionals $\lambda$
+of operator norm at most one.
+
+Every such functional corresponds to a bounded,
+alternating, $G$-invariant simplicial cocycle
+$\beta:\Gamma^{N+1}\to\R$ with
+$\|\beta\|_\infty\leq1$.
+Pullback to the homogeneous bar complex gives a
+bounded $G$-cocycle $\pi^*\beta$ with
+$\|\pi^*\beta\|_\infty\leq1$.
+The comparison of Proposition~\ref{prop:comparison}
+and the dual description of simplicial volume
+therefore yield
+\[
+ |\lambda(A_M)|
+ =|\langle[\pi^*\beta],[B]\rangle|
+ \leq\|B\|.
+\]
+Taking the supremum over all $\lambda$ proves
+the assertion. This avoids assuming that a
+general singular simplex maps to a single
+cellular simplex with no increase in $\ell^1$-norm.
 \end{proof}
 
 The lower estimate is obtained from a bounded orientation cocycle.
