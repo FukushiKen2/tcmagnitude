@@ -159,32 +159,32 @@ by the distance-difference functions, even though the
 global nerve is defined only in terms of closed sets.
 
 \begin{proposition}\label{prop:top-simplex}
-Suppose $g$ is regular, and set $N=2n$.
-Every $N$-simplex of $\mathcal N_g$ is realized by a
-unique pair of points in $B$, and the set of such
-pairs is precisely $C_g$.
-In particular, $C_g$ is finite.
+Suppose $g$ is regular and set $N=2n$.
+Every pair in $C_g$ determines an $N$-simplex
+of $\mathcal N_g$. Conversely, every $N$-simplex
+is realized by one or more isolated endpoint pairs.
+There are only finitely many such pairs modulo $G$,
+and thus $C_g$ is finite.
 \end{proposition}
 
 \begin{proof}
 An $N$-simplex has $N+1$ minimizing labels.
 Its defining $N$ length-difference equations have
-full-rank differential at every solution, so all
-solutions are isolated. Their projections to compact
-$B$ form a closed set: a convergent sequence of such
-pairs has limiting minimizing labels, after suitable
-deck transformations and a subsequence, by properness.
-Therefore there are finitely many solutions in $B$.
-
-More precisely, a top simplex specifies a set of labels,
-not just an unlabelled pair. At each pair with $N+1$
-minimizers the label set is exactly the vertex set of
-its top simplex; conversely, every top simplex occurs
-in this way. Distinct pairs may in principle determine
-top simplices in the same $G$-orbit, so the assertion
-of uniqueness must be interpreted locally in the
-orbit-space correspondence, not as global injectivity
-of the assignment $C_g\to\mathcal N_g/G$.
+full-rank differential at each realization, so their
+solutions are isolated. To see that the set of
+realizations modulo $G$ is finite, put endpoints
+in compact fundamental regions. By properness,
+only finitely many labels can minimize there.
+If infinitely many pairs realized top simplices,
+a convergent subsequence would have a fixed
+label configuration and converge to another
+simultaneous minimum. Full-rank transversality
+at that limit contradicts accumulation.
+Each pair in $C_g$ has exactly $N+1$ labels,
+so it determines exactly one top simplex after lifts.
+Different pairs can determine the same simplex
+orbit; no global bijection with simplex orbits
+is asserted.
 \end{proof}
 
 \begin{remark}\label{rem:nerve-geometry}
