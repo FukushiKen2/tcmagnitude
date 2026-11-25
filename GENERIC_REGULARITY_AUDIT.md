@@ -75,3 +75,20 @@ Comparison of proven statements:
 - Current Section 6: a claimed **open dense** set within strictly negatively curved metrics, for which the *simultaneously minimizing distance branches* have full rank \(k-1\); this implies smooth strata of exact minimum multiplicity, a finite top stratum, and an upper bound on geodesic complexity using the separately proved finite-valued covering selection theorem.
 - A count-only KPP bound does not establish Section 6's full-rank condition, even though its ideas substantially overlap. Check the full KPP transversality constructions before claiming novelty of the stronger geometric statement.
 - Targeted searches of published GC work (Recio-Mitter and Mescher–Stegemeyer, including cut locus fibered-decomposition bounds) did not reveal the exact generic-negative-curvature GC equality. This is an incomplete novelty survey, not proof of absence.
+
+
+## Closer examination of KPP multi-exponential transversality (2026-11-25)
+
+**Sources inspected:** KPP 2006 original text, Section 6 (Theorem 6.1: fixed basepoint multi-exponential transversality for k>=3) and Section 7 (Lemma 7.3, Corollary 7.5, proof of Theorem 1.2). KPP's proof of the uniform bound uses a multi-exponential map with **varying initial point** and transversality to the diagonal. Its negative-curvature remark notes uniqueness of the geodesic in each homotopy class and smooth dependence on endpoints; these are precisely the smooth-branch facts used in this manuscript.
+
+**Local mathematical equivalence under no conjugate points.** For a fixed configuration of k distinct geodesics with locally well-defined smooth branches from x to y, use initial vectors v_i and set
+\[
+{\mathscr E}_g(x,v_0,\ldots,v_{k-1})
+=((\exp_x^g(v_0),|v_0|_g),\ldots,
+  (\exp_x^g(v_{k-1}),|v_{k-1}|_g)).
+\]
+If every \(\exp_x^g\) has invertible derivative at the v_i, the equal-endpoint equations cut out a smooth submanifold locally parameterized by \((x,y)\), on which the equal-length equations become precisely \(L_{a_i}(x,y)-L_{a_0}(x,y)=0\) (using lengths rather than energy, away from zero). Since the endpoint equations have surjective derivative in the v_i directions, transversality of \({\mathscr E}_g\) to the full endpoint-and-length diagonal is **equivalent** to full rank of the k-1 length differences in the (x,y) variables. This is an application of eliminating a transverse system of constraints.
+
+**What is (and is not) thereby in KPP.** Their proof uses precisely such varying-basepoint multi-transversality for the index bound and includes supporting submersion lemmas. This is much closer to the current geometric regularity condition than the numerical bound alone. But the theorem statement giving an upper bound on the *number* of equal-length geodesics is logically insufficient by itself to assert the full-rank coincidence strata for *every k*. To replace the manuscript's transversality proof with a direct citation, it remains necessary to identify a KPP statement or argument giving simultaneous generic transversality for **all k>=2**, including the k=2 case and every minimizing branch configuration, and to distinguish residual genericity from the manuscript's open-dense condition. Until that exact strengthening is checked, keep the independent shorter proof and cite KPP as substantive precursor.
+
+**Novelty adjustment:** Do not claim the **mechanism** of distance-difference multi-transversality itself is entirely new; it is closely related, and in the absence of conjugate points locally equivalent, to KPP's varying-basepoint multi-exponential transversality. The GC consequence remains a separately supported candidate.
