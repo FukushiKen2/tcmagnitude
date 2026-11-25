@@ -22,12 +22,18 @@ We use this smoothness only off the diagonal $x=y$,
 where different minimizing labels cannot tie.
 
 Two distinct minimizing geodesics from $x$ to $y$
-have disjoint interiors. Indeed, if they shared an
-interior point, swapping their initial and final
-segments would again give a shortest broken path.
-A globally minimizing path cannot have a corner,
-so uniqueness for the geodesic equation forces
-the geodesics to coincide.
+have disjoint interiors. Indeed, if they share an
+interior point $z$, both initial subsegments from
+$x$ to $z$ have length $d_g(x,z)$, and both final
+subsegments from $z$ to $y$ have length $d_g(z,y)$.
+Any concatenation of one initial and one final
+subsegment therefore has length $d_g(x,y)$.
+Such a minimizing broken path cannot have a corner
+at $z$. Hence the geodesics have the same tangent
+there, and uniqueness of the geodesic equation
+makes them identical. This argument also shows
+that an interior point of one minimizing geodesic
+cannot lie on another distinct minimizing geodesic.
 
 \begin{lemma}\label{lem:metric-submersion}
 Suppose $a_0,\ldots,a_{k-1}$ represent distinct
@@ -439,11 +445,32 @@ and
 Let $E\to B$ be the covering whose fiber
 over $(x,y)$ consists of fixed-endpoint
 homotopy classes of paths, equivalently
-the labels of lifts. Let $Z$ be the subset
-corresponding to minimizing geodesics.
-The map $Z\to B$ is closed and proper with
-finite fibers, by compactness of $M$ and
-properness of the universal covering action.
+the labels of lifts. Concretely,
+\[
+ E=(\widetilde M\times\widetilde M
+          \times\Gamma)/G,
+ \quad
+ (g,h)\cdot(u,v,a)=(gu,hv,gah^{-1}).
+\]
+Let $Z\subset E$ be the subset of classes
+represented by minimizing geodesics.
+In the covering chart indexed by $a$,
+this is the closed equality locus
+$L_a(u,v)=m(u,v)$; hence $Z$ is closed.
+It also has compact total space: choose
+a compact fundamental region $K$ in
+$\widetilde M$ and a finite set $F$
+containing every minimizing label on
+$K\times K$. Then $Z$ is the continuous
+image of the finite union of compact
+sets
+\[
+ \bigcup_{a\in F}
+ \{(u,v,a)\in K\times K\times\{a\}:
+                            L_a(u,v)=m(u,v)\}.
+\]
+Thus $Z\to B$ is proper and surjective,
+with nonempty finite fibers.
 The exact multiplicity strata are smooth
 of dimension $N-k+1$, by
 Theorem~\ref{thm:genericity}.
