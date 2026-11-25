@@ -80,6 +80,71 @@ so $R_{k,0}f$ is the pullback of the corresponding
 invariant alternating function of the coset vertices.
 \end{proof}
 
+\begin{lemma}\label{lem:horizontal-contraction}
+For every $q\geq0$ the horizontally augmented
+complex
+\[
+ 0\longrightarrow C_b^q(G)
+ \xrightarrow{\jmath}D^{0,q}
+ \xrightarrow{\delta}D^{1,q}
+ \xrightarrow{\delta}D^{2,q}\longrightarrow\cdots
+\]
+is contractible by maps of operator norm at most one.
+Consequently the augmentation
+\[
+ \jmath:C_b^\bullet(G)\longrightarrow
+          \operatorname{Tot}(D^{\bullet,\bullet}),
+ \qquad (\jmath\alpha)(s;g_0,\ldots,g_q)
+          =\alpha(g_0,\ldots,g_q)
+\]
+is a quasi-isomorphism. Under this identification,
+the cochain map $R$ of Lemma~\ref{lem:AW-comparison}
+is its inverse on cohomology.
+\end{lemma}
+
+\begin{proof}
+For $p\geq1$ define
+\[
+ (h^{p,q}f)(s_0,\ldots,s_{p-1};
+                         g_0,\ldots,g_q)
+ =
+ f(g_0H,s_0,\ldots,s_{p-1};g_0,\ldots,g_q).
+\]
+For $p=0$ use the same formula with no $s$-entries:
+\[
+ (h^{0,q}f)(g_0,\ldots,g_q)
+ =f(g_0H;g_0,\ldots,g_q).
+\]
+The maps are $G$-equivariant and preserve alternation
+in the remaining $S$-variables; their norms are at
+most one. Direct expansion of the alternating
+coboundary gives
+\[
+ h^{p+1,q}\delta+\delta h^{p,q}
+ =\mathrm{id}_{D^{p,q}}\quad(p\geq1),
+ \qquad
+ h^{1,q}\delta+\jmath h^{0,q}
+ =\mathrm{id}_{D^{0,q}},
+ \qquad h^{0,q}\jmath=\mathrm{id}.
+\]
+The formulas involve $g_0H$, which is why
+the homotopies are equivariant despite the
+absence of a $G$-fixed vertex of $S$.
+
+Thus the horizontal augmentation is contractible
+in every fixed vertical degree. Filtering the
+first-quadrant total complex by the vertical
+degree, its horizontal-first spectral sequence
+has only the augmented-column contribution
+$C_b^\bullet(G)$; equivalently, the usual
+bounded double-complex comparison lemma
+applies to this explicitly contractible
+horizontal resolution. This proves that $\jmath$
+is a quasi-isomorphism. Finally
+$R\jmath=\mathrm{id}_{C_b^\bullet(G)}$
+on cochains, so $R$ induces the inverse.
+\end{proof}
+
 \begin{theorem}\label{thm:bounded-lift}
 Assume that the pointwise stabilizer of any two distinct
 elements of $S$ is amenable. Then for each $k\geq2$
@@ -197,15 +262,15 @@ $S$-variables and vertical differential $d_G$
 in the group variables. Use total differential
 $d_{\rm tot}=\delta+(-1)^p d_G$ on bidegree $(p,q)$.
 
-Each fixed vertical degree is horizontally exact
-after augmentation by $C_b^\bullet(G)$:
-the contraction is obtained by inserting the
-vertex $g_0H$ into the tuple of $S$-vertices
-of a cochain evaluated at $(g_0,\ldots,g_q)$.
-It is $G$-equivariant and has norm at most one.
-Thus the total complex computes $H_b^\bullet(G)$,
-and the edge map from the horizontal bottom row
-$A^\bullet=D^{\bullet,0}_{d_G}$ is pullback $\rho$.
+Lemma~\ref{lem:horizontal-contraction} identifies
+the total cohomology with $H_b^\bullet(G)$ by
+the augmentation $\jmath$, with inverse
+induced by the comparison map $R$.
+Moreover the vertical degree-zero cocycles
+$\ker(d_G:D^{p,0}\to D^{p,1})$ are precisely
+the bounded alternating invariant functions
+$A^p$ on $S^{p+1}$. On this bottom row $R$
+is the coset pullback defining $\rho$.
 
 By Lemma~\ref{lem:bounded-vertical}, all positive
 vertical cohomology in columns $p\geq1$ vanishes.
@@ -231,9 +296,23 @@ resulting total coboundary, and continue.
 At stage $p$ the horizontal differential
 increases the norm by at most $p+2$,
 and the vertical contraction does not increase it.
-After $k$ stages we obtain an element
-$\beta\in D^{k,0}$, independent of the group
-variables, which is a horizontal cocycle.
+More explicitly, write $a_0=\jmath\alpha$.
+With $d_Gb_0=a_0$ put $a_1=-\delta b_0$.
+Inductively, for $1\leq p<k$, take
+$b_p=(-1)^p h_pa_p$, so
+$d_Gb_p=(-1)^p a_p$, and put
+$a_{p+1}=-\delta b_p$. Here $h_p$ is
+the vertical contraction in column $p$.
+At every stage, $\delta a_p=0$ and
+$d_Ga_p=0$ when $p\geq1$; the identities
+follow inductively from anticommutation in
+the total complex and $\delta^2=0$.
+Thus $a_p-d_{\rm tot}b_p=a_{p+1}$.
+At the final stage $\beta=a_k\in D^{k,0}$
+satisfies both $d_G\beta=0$ and
+$\delta\beta=0$. Consequently $\beta$
+is independent of the group variables
+and belongs to $A^k$.
 The bound is
 \[
  \|\beta\|\leq
