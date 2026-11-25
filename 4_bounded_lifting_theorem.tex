@@ -212,6 +212,72 @@ infinite cyclic \cite{BridsonHaefliger1999}. This identifies the
 common stabilizer.
 \end{proof}
 
+\begin{proposition}\label{prop:difference-lift-bound}
+Let $\omega\in C_b^n(\Gamma)$ be an alternating homogeneous
+$n$-cocycle, $n\geq2$, and put
+\[
+ D=p_2^*\omega-p_1^*\omega\in C_b^n(G).
+\]
+There is a bounded alternating $G$-invariant cocycle
+$\widetilde D$ on $\Gamma^{n+1}$ with
+\[
+ [\pi^*\widetilde D]=[D],\qquad
+ \|\widetilde D\|_\infty
+ \leq n(n+1)!\,\|\omega\|_\infty.
+\]
+\end{proposition}
+
+\begin{proof}
+For the initial vertical contraction at the coset
+$H=\Delta\Gamma$, use the $H$-equivariant retraction
+\[
+ r:G\longrightarrow H,\qquad r(g,h)=(g,g).
+\]
+The homogeneous prism cochain of degree $n-1$ is
+\[
+ KD(g_0,\ldots,g_{n-1})
+ =\sum_{i=0}^{n-1}(-1)^i
+ D(rg_0,\ldots,rg_i,g_i,\ldots,g_{n-1}).
+\]
+Here the expression in the $i$-th summand has
+$n+1$ group arguments. The first-coordinate
+parts of $rg_i$ and $g_i$ agree. Since $\omega$
+is alternating, the $p_1^*\omega$ contribution
+of every summand is zero. Consequently
+\[
+ \|KD\|_\infty\leq n\|\omega\|_\infty.
+\]
+The prism identity and $D|_{H^{n+1}}=0$
+give $d_G(KD)=D$.
+
+Transport $KD$ equivariantly to the other vertex
+cosets, obtaining $b_0\in D^{0,n-1}$
+with the same bound. In the double complex
+of Theorem~\ref{thm:bounded-lift}, set
+\[
+ a_1=-\delta b_0,\qquad
+ b_p=(-1)^p h_pa_p,\qquad
+ a_{p+1}=-\delta b_p
+ \quad(1\leq p<n),
+\]
+where $h_p$ denotes the norm-one vertical
+contraction in column $p$. This removes the
+positive vertical degrees successively.
+The horizontal differential from column
+$p$ to column $p+1$ has norm at most $p+2$.
+It follows that the final cocycle
+$\widetilde D=a_n$ satisfies
+\[
+ \|\widetilde D\|_\infty
+ \leq n(2\cdot3\cdots(n+1))
+       \|\omega\|_\infty
+ =n(n+1)!\|\omega\|_\infty.
+\]
+The total-complex coboundary identities imply
+$[\pi^*\widetilde D]=[D]$, as in
+Theorem~\ref{thm:bounded-lift}.
+\end{proof}
+
 \begin{corollary}\label{cor:bounded-diagonal}
 For $k\geq2$, every bounded cohomology class on
 $\Gamma\times\Gamma$ restricting trivially to
