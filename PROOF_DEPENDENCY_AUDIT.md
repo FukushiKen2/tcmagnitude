@@ -34,7 +34,7 @@ The first inequality uses localization (Section 7), the second bounded-cohomolog
 
 15. **[Sec. 2, prop:MH-minimal]** Minimal-length degree-two endpoint magnitude homology equals augmentation kernel of the minimizing-label set, rank m_g(x,y)-1; the proof uses magnitude boundaries in degrees 2 and 3.
 16. **[Sec. 6, lem:selection and thm:generic-GC]** GC<=2n+1 from continuous sheet selection on locally closed strata; TC<=GC and the known TC value imply equality. This branch is *not* needed for the quantitative count.
-17. The final equality between GC and maximal magnitude rank additionally requires C_g nonempty; in the draft this follows from the counting theorem. Alternatively use Horja's known multiplicity theorem for regular metrics.
+17. **[Updated 2026-11-25]** The final equality between GC and maximal magnitude rank now uses Horja's established existence theorem for at least 2n+1 minimizing geodesics, together with the regularity upper bound. It no longer depends on the quantitative counting theorem.
 
 ## External prior work affecting novelty
 
