@@ -31,6 +31,55 @@ $A^\bullet\to C_b^\bullet(G)$, hence
  \rho^k:H^k(A^\bullet)\longrightarrow H_b^k(G;\R).
 \]
 
+\begin{lemma}\label{lem:AW-comparison}
+For $p,q\geq0$, let
+\[
+ R_{p,q}:D^{p,q}\longrightarrow C_b^{p+q}(G)
+\]
+be the bounded linear map defined by
+\[
+ (R_{p,q}f)(g_0,\ldots,g_{p+q})
+ =f(g_0H,\ldots,g_pH;g_p,\ldots,g_{p+q}).
+\]
+The maps $R_{p,q}$ have operator norm at most one,
+and their sum $R$ on the total complex satisfies
+\[
+ d_G R=R\bigl(\delta+(-1)^p d_G\bigr).
+\]
+For $f\in D^{k,0}$ satisfying $d_Gf=0$,
+$R f$ is precisely the coset pullback of the
+$G$-invariant alternating function determined by $f$.
+\end{lemma}
+
+\begin{proof}
+Boundedness and $G$-invariance are immediate.
+To check the cochain identity, evaluate both sides on
+$(g_0,\ldots,g_{p+q+1})$. The horizontal differential
+contributes
+\[
+ \sum_{i=0}^{p+1}(-1)^i
+ f(g_0H,\ldots,\widehat{g_iH},\ldots,g_{p+1}H;
+   g_{p+1},\ldots,g_{p+q+1}),
+\]
+and the signed vertical differential contributes
+\[
+ (-1)^p\sum_{j=0}^{q+1}(-1)^j
+ f(g_0H,\ldots,g_pH;
+   g_p,\ldots,\widehat{g_{p+j}},\ldots,g_{p+q+1}).
+\]
+The horizontal term $i=p+1$ cancels the vertical
+term $j=0$. All remaining terms are exactly
+the homogeneous coboundary of $R_{p,q}f$:
+the first $p+1$ delete vertices in the
+$S$-variables and the rest delete group variables.
+This proves the identity.
+
+If $d_Gf=0$ in vertical degree zero,
+$f(s_0,\ldots,s_k;g)$ is independent of $g$,
+so $R_{k,0}f$ is the pullback of the corresponding
+invariant alternating function of the coset vertices.
+\end{proof}
+
 \begin{theorem}\label{thm:bounded-lift}
 Assume that the pointwise stabilizer of any two distinct
 elements of $S$ is amenable. Then for each $k\geq2$
@@ -193,14 +242,15 @@ The bound is
 \]
 The two cocycles differ by a total coboundary,
 so they induce the same class in $H_b^k(G)$.
-The edge comparison is concretely given by
-the Alexander--Whitney evaluation
-\[
- f(s_0,\ldots,s_p;g_0,\ldots,g_q)
- \longmapsto
- f(g_0H,\ldots,g_pH;g_p,\ldots,g_{p+q}),
-\]
-with the standard total-complex sign convention.
+The comparison with the usual bounded bar complex
+is the explicit cochain map $R$ of
+Lemma~\ref{lem:AW-comparison}. It sends the
+initial cocycle, viewed as constant in the
+$S$-variable, to $\alpha$ itself, and sends
+the terminal bottom-row cocycle to its
+coset pullback. Thus the cohomology classes
+agree under the specified map, with no
+unspecified sign convention.
 
 Finally, if the restriction of $[\alpha]$ to $H$
 vanishes merely in cohomology, choose a bounded
