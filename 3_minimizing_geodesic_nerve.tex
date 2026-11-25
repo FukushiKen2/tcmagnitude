@@ -1,0 +1,198 @@
+\section{The minimizing-geodesic nerve}
+\label{sec:nerve}
+
+Let $X=\widetilde M$ with its lifted negatively curved metric,
+and put $B=M\times M$, $\widetilde B=X\times X$.
+The group $G=\Gamma\times\Gamma$ acts on $\widetilde B$ by
+\[
+ (g,h)\cdot(u,v)=(gu,hv)
+\]
+and on the label set $\Gamma$ by
+$(g,h)\cdot a=gah^{-1}$.
+For $a\in\Gamma$, let
+\[
+ L_a(u,v)=d_X(u,av),\qquad
+ m(u,v)=\min_{a\in\Gamma}L_a(u,v)=d_M(x,y).
+\]
+All minima are attained, and the set of minimizing labels
+$S(u,v)=\{a:L_a(u,v)=m(u,v)\}$ is finite.
+
+\subsection{The nerve and a uniform allowance}
+
+For every label $a$, define the closed subset
+\[
+ D_a=\{(u,v)\in\widetilde B:L_a(u,v)=m(u,v)\}.
+\]
+The \emph{minimizing-geodesic nerve} $\mathcal N_g$
+has vertex set $\Gamma$ and a simplex on each finite
+nonempty $S\subset\Gamma$ with
+$\bigcap_{a\in S}D_a\ne\varnothing$.
+Equivariance of $L_a$ gives a simplicial $G$-action.
+
+For $\delta>0$, also define the open sets
+\[
+ D_a^\delta=\{(u,v):L_a(u,v)<m(u,v)+\delta\}
+\]
+and let $\mathcal N_g^\delta$ be their nerve.
+Clearly $\mathcal N_g\subseteq\mathcal N_g^\delta$.
+
+\begin{lemma}\label{lem:uniform-allowance}
+There exists $\delta_0>0$ such that
+\[
+ \mathcal N_g^\delta=\mathcal N_g
+ \quad\text{for every }0<\delta\leq\delta_0.
+\]
+Moreover, $\mathcal N_g$ has finitely many $G$-orbits of simplices.
+\end{lemma}
+
+\begin{proof}
+Choose a compact fundamental region $K\subset X$.
+For $(u,v)\in K\times K$ and $L_a(u,v)\leq m(u,v)+1$,
+the label $a$ belongs to the finite set
+\[
+ F=\{a\in\Gamma:d_X(K,aK)\leq\operatorname{diam}(M)+1\}.
+\]
+Thus every simplex of $\mathcal N_g^\delta$,
+$0<\delta\leq1$, is $G$-equivalent to a subset
+of the fixed finite set $F$.
+For a fixed nonempty subset $S\subset F$, put
+\[
+ \theta_S(u,v)=\max_{a\in S}\bigl(L_a(u,v)-m(u,v)\bigr).
+\]
+If $S$ does not span a simplex of $\mathcal N_g$,
+the continuous function $\theta_S$ is strictly positive
+on the compact set $K\times K$, hence has a positive minimum.
+There are only finitely many such $S$. Taking $\delta_0$
+below all their positive minima proves the equality
+of nerves. The same finite-label argument yields the
+finiteness of simplex orbits.
+\end{proof}
+
+\begin{remark}
+The inequality in the definition of $D_a^\delta$ is strict.
+Therefore the value of $\delta_0$ can be reduced so that
+the proof works without a boundary equality issue.
+The lemma concerns the nerves of the covering sets,
+not equality of the sets $D_a$ and $D_a^\delta$ themselves.
+\end{remark}
+
+\subsection{The equivariant map}
+
+Choose $0<\delta\leq\delta_0$ and define
+\[
+ w_a(u,v)=\max\{0,m(u,v)+\delta-L_a(u,v)\},
+ \qquad W(u,v)=\sum_{a\in\Gamma}w_a(u,v).
+\]
+At every $(u,v)$ at least one label minimizes $L_a$,
+so $W(u,v)>0$.
+
+\begin{proposition}\label{prop:Phi}
+The expression
+\begin{equation}\label{eq:Phi}
+ \Phi_g(u,v)=\sum_{a\in\Gamma}
+ \frac{w_a(u,v)}{W(u,v)}[a]
+\end{equation}
+defines a continuous $G$-equivariant map
+\[
+ \Phi_g:\widetilde B\longrightarrow|\mathcal N_g|.
+\]
+It descends to a continuous map
+\[
+ \bar\Phi_g:B\longrightarrow Q_g=|\mathcal N_g|/G.
+\]
+\end{proposition}
+
+\begin{proof}
+On any compact subset of $\widetilde B$, the label set
+for which $w_a$ can be nonzero is finite, by proper
+discontinuity of the deck action. Thus \eqref{eq:Phi}
+is a locally finite sum of continuous functions.
+Its support at $(u,v)$ is a simplex of
+$\mathcal N_g^\delta=\mathcal N_g$, hence its image
+belongs to the geometric realization.
+The identity
+\[
+ L_{gah^{-1}}(gu,hv)=L_a(u,v)
+\]
+and invariance of $m$ establish equivariance.
+The quotient statement follows.
+\end{proof}
+
+\begin{lemma}\label{lem:no-inversions}
+The $G$-action on $\mathcal N_g$ is without inversions:
+every element preserving a simplex setwise fixes its vertices.
+Consequently $Q_g$ has a finite CW structure with one
+open cell for each $G$-orbit of simplices.
+\end{lemma}
+
+\begin{proof}
+Suppose $(g,h)$ preserves a finite vertex set $S$.
+For every $a\in S$, some common positive power $r$
+of $(g,h)$ fixes $a$, so $g^r=ah^ra^{-1}$.
+The torsion-free hyperbolic group $\Gamma$ has the
+unique-root property: $p^r=q^r$ implies $p=q$.
+It follows that $g=aha^{-1}$ for every $a\in S$,
+so $(g,h)$ fixes every vertex.
+The standard quotient-cell construction gives the
+last assertion, using Lemma~\ref{lem:uniform-allowance}.
+\end{proof}
+
+The quotient $Q_g$ need not be contractible. Its relevance
+comes instead from the fundamental cycle represented by
+$\bar\Phi_g$ and its image in the exterior augmentation
+module under Lemma~\ref{lem:cycle-injective}.
+
+\subsection{Multiplicity and the dimension of the nerve}
+
+If $g$ is regular in the sense of Section 1, every minimizing
+label set has cardinality at most $2n+1$. Consequently,
+\[
+ \dim\mathcal N_g\leq2n.
+\]
+At a point with precisely $k$ minimizing labels, the
+length-difference equations cut out a smooth local stratum
+of codimension $k-1$ in $B$, by the implicit function
+theorem. The inequalities excluding all remaining labels
+are strict in a sufficiently small neighborhood.
+Thus the local geometry of each simplex is controlled
+by the distance-difference functions, even though the
+global nerve is defined only in terms of closed sets.
+
+\begin{proposition}\label{prop:top-simplex}
+Suppose $g$ is regular, and set $N=2n$.
+Every $N$-simplex of $\mathcal N_g$ is realized by a
+unique pair of points in $B$, and the set of such
+pairs is precisely $C_g$.
+In particular, $C_g$ is finite.
+\end{proposition}
+
+\begin{proof}
+An $N$-simplex has $N+1$ minimizing labels.
+Its defining $N$ length-difference equations have
+full-rank differential at every solution, so all
+solutions are isolated. Their projections to compact
+$B$ form a closed set: a convergent sequence of such
+pairs has limiting minimizing labels, after suitable
+deck transformations and a subsequence, by properness.
+Therefore there are finitely many solutions in $B$.
+
+More precisely, a top simplex specifies a set of labels,
+not just an unlabelled pair. At each pair with $N+1$
+minimizers the label set is exactly the vertex set of
+its top simplex; conversely, every top simplex occurs
+in this way. Distinct pairs may in principle determine
+top simplices in the same $G$-orbit, so the assertion
+of uniqueness must be interpreted locally in the
+orbit-space correspondence, not as global injectivity
+of the assignment $C_g\to\mathcal N_g/G$.
+\end{proof}
+
+\begin{remark}\label{rem:nerve-geometry}
+The full simplex $Y$ from Section~\ref{sec:canonical}
+is contractible and contains $\mathcal N_g$ equivariantly.
+The composite
+$B\xrightarrow{\bar\Phi_g}Q_g\to Q$
+induces, on the fundamental class, the element
+$A_M$ of \eqref{eq:A-comparison}. We do not require
+the closed sets $D_a$ to constitute a good cover.
+\end{remark}
