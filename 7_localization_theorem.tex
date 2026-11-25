@@ -1,0 +1,233 @@
+\section{Localization and the counting theorem}
+\label{sec:localization}
+
+In this section $M$ is closed, oriented and negatively curved,
+$N=2n$, and $g$ is a regular negatively curved metric.
+We prove the localization formula of
+Theorem~\ref{thm:intro-local} and the quantitative
+counting theorem.
+
+\subsection{Top-dimensional cells of the nerve}
+
+Let $\mathcal N_g$ be the minimizing-geodesic nerve
+constructed in Section~\ref{sec:nerve}, and let
+$Q_g=|\mathcal N_g|/G$.
+By Theorem~\ref{thm:genericity}, $\dim\mathcal N_g\leq N$.
+The equivariant map $\Phi_g$ from
+Proposition~\ref{prop:Phi} descends to
+$\bar\Phi_g:B\to Q_g$.
+
+For each $b=(x,y)\in C_g$, choose lifts
+$(u,v)$ and an ordered minimizing-label set
+\[
+ S_b=\{a_0,\ldots,a_N\}.
+\]
+The associated top-dimensional simplex of
+$\mathcal N_g$ is denoted $\sigma_b$.
+Write
+\[
+ F_b=(L_{a_1}-L_{a_0},\ldots,L_{a_N}-L_{a_0}).
+\]
+The regularity condition says that
+$dF_b:T_bB\to\R^N$ is invertible.
+Define
+\begin{equation}\label{eq:local-sign}
+ \epsilon_b=\operatorname{sgn}\det dF_b\in\{+1,-1\}.
+\end{equation}
+
+\begin{lemma}\label{lem:local-degree}
+The local degree of $\bar\Phi_g$ at $b$,
+with target orientation determined by the
+ordered simplex $[a_0,\ldots,a_N]$, equals
+$\epsilon_b$.
+\end{lemma}
+
+\begin{proof}
+Choose a small neighborhood of $b$ and compatible
+lifts so that the only labels with
+$L_a<m+\delta$ are the labels in $S_b$.
+This is possible after shrinking the neighborhood
+and the uniform allowance $\delta$, without
+changing the nerve.
+
+On this neighborhood the barycentric weights are
+\[
+ \lambda_i=\frac{m+\delta-L_{a_i}}{
+       \sum_{j=0}^{N}(m+\delta-L_{a_j})},
+ \qquad 0\leq i\leq N.
+\]
+All weights are strictly positive near $b$.
+Their differences satisfy the exact identity
+\begin{equation}\label{eq:barycentric-difference}
+ \lambda_i-\lambda_0
+ =-\frac{L_{a_i}-L_{a_0}}{W},
+ \qquad 1\leq i\leq N.
+\end{equation}
+The barycenter is characterized by the vanishing
+of the $N$ differences in
+\eqref{eq:barycentric-difference}, so its inverse
+image near $b$ is precisely $\{b\}$.
+At $b$, $W=(N+1)\delta>0$ and the derivative
+of the difference-coordinate map is
+$-W^{-1}dF_b$.
+The orientation defined by
+$(\lambda_1-\lambda_0,\ldots,\lambda_N-\lambda_0)$
+agrees with the standard orientation of
+$[a_0,\ldots,a_N]$: the transition matrix
+from $(\lambda_1,\ldots,\lambda_N)$ has
+positive determinant $N+1$.
+Since $N=2n$ is even, the factor $(-1)^N$
+is positive. The local degree is therefore
+$\operatorname{sgn}\det dF_b$.
+\end{proof}
+
+\begin{lemma}\label{lem:localized-cycle}
+The cellular cycle
+\begin{equation}\label{eq:nerve-cycle}
+ Z_g=\sum_{b\in C_g}\epsilon_b[\sigma_b]
+ \in C_N(Q_g;\Z)
+\end{equation}
+represents $(\bar\Phi_g)_*[B]$ in $H_N(Q_g;\Z)$.
+If multiple points yield the same orbit of
+oriented simplices, their coefficients are added.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:no-inversions}, each open top
+cell of $Q_g$ has an ordinary characteristic
+simplex without vertex permutations. Choose
+the barycenter of each top cell as regular
+value of $\bar\Phi_g$; Lemma
+\ref{lem:local-degree} identifies its inverse
+images and their local degrees.
+The usual cellular description of the pushforward
+of the fundamental class gives the chain
+\eqref{eq:nerve-cycle}. It is a cycle because
+$B$ has no boundary.
+\end{proof}
+
+\subsection{The exterior localization formula}
+
+\begin{theorem}\label{thm:localization}
+Let $M$ be connected, closed, oriented and negatively curved,
+and let $g$ be regular. Then
+\begin{equation}\label{eq:localization}
+ \mathfrak a_N\frown[M\times M]
+ =\sum_{b\in C_g}\epsilon_b
+ \big[(a_1-a_0)\wedge\cdots\wedge(a_N-a_0)\big]
+ \quad\text{in }(\bigwedge^N I)_G.
+\end{equation}
+The right-hand side does not depend on the
+chosen lifts or vertex orderings, provided
+$\epsilon_b$ is defined by \eqref{eq:local-sign}.
+\end{theorem}
+
+\begin{proof}
+Compose $\bar\Phi_g:B\to Q_g$ with the
+simplicial inclusion $Q_g\to Q$, where
+$Q=|Y|/G$ is the full simplex orbit space.
+Proposition~\ref{prop:comparison} gives
+\[
+ \iota_N(\bar\Phi_g)_*[B]
+ =\mathfrak a_N\frown[B].
+\]
+By Lemma~\ref{lem:localized-cycle}, the class
+on the left is represented by $Z_g$.
+Lemma~\ref{lem:exterior-quotient} sends
+the simplex $[a_0,\ldots,a_N]$ to
+\[
+ (a_1-a_0)\wedge\cdots\wedge(a_N-a_0),
+\]
+which proves the formula.
+
+Changing lifts applies the same $G$-element
+to all labels, hence does not alter their
+coinvariant class. Permuting the labels
+changes the orientation of the simplex and
+the sign of the determinant by the same
+sign. The product appearing in
+\eqref{eq:localization} is therefore unchanged.
+\end{proof}
+
+\subsection{Magnitude homology in the local terms}
+
+At each $b=(x,y)\in C_g$ the label set has
+$N+1$ elements. Proposition
+\ref{prop:MH-minimal} gives
+\[
+ \MH_{2,d_M(x,y)}(M;x,y)\cong I(S_b)
+\]
+with $\operatorname{rank}I(S_b)=N$.
+The inclusion $I(S_b)\hookrightarrow I$
+takes the generator
+\[
+ (a_1-a_0)\wedge\cdots\wedge(a_N-a_0)
+ \in\bigwedge^N I(S_b)
+\]
+to the local exterior term in
+\eqref{eq:localization}.
+This interpretation is canonical up to the
+orientation sign already accounted for
+by $\epsilon_b$. Thus each summand is a
+local index valued in the top exterior
+power of second magnitude homology at
+the minimal endpoint distance.
+
+\subsection{Quantitative consequences}
+
+\begin{proof}[Proof of Theorem~\ref{thm:intro-count}]
+Theorem~\ref{thm:genericity} proves that
+regular metrics form an open dense set
+and that $C_g$ is finite for every such metric.
+By \eqref{eq:localization}, the real class
+$A_M$ has a representation as a sum of
+$\#C_g$ exterior generators, each with
+coefficient $+1$ or $-1$. Definition
+\eqref{eq:delta-norm} therefore yields
+\[
+ \|A_M\|_\Delta\leq\#C_g.
+\]
+The lower estimate from
+Theorem~\ref{thm:intro-estimate} gives
+\[
+ \#C_g\geq\|A_M\|_\Delta
+ \geq c_n\|M\|^2.
+\]
+The claim follows.
+\end{proof}
+
+\begin{corollary}\label{cor:top-multiplicity}
+For every regular negatively curved metric on an
+oriented closed negatively curved $n$-manifold,
+there exists an ordered pair of points joined
+by exactly $2n+1$ minimizing geodesics.
+\end{corollary}
+
+\begin{proof}
+The simplicial volume of a closed negatively
+curved manifold is positive, so the lower
+bound in Theorem~\ref{thm:intro-count}
+forces $\#C_g>0$.
+\end{proof}
+
+\begin{example}\label{ex:surface-count}
+For a closed oriented surface $\Sigma_h$ of genus
+$h\geq2$, one has $\|\Sigma_h\|=4(h-1)$.
+Here $n=2$ and $c_2=1/72$. Therefore
+every regular negatively curved metric satisfies
+\[
+ \#\{(x,y):m_g(x,y)=5\}
+ \geq\frac{2}{9}(h-1)^2.
+\]
+The count concerns ordered pairs.
+\end{example}
+
+\begin{remark}
+The estimate does not state that every negatively
+curved metric is regular. At a nongeneric metric,
+several top-dimensional local contributions may
+coalesce at a point of higher multiplicity.
+A general local-index formula for such degeneracies
+requires additional analysis and is not needed
+for the counting theorem proved here.
+\end{remark}
