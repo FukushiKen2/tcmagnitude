@@ -92,3 +92,22 @@ If every \(\exp_x^g\) has invertible derivative at the v_i, the equal-endpoint e
 **What is (and is not) thereby in KPP.** Their proof uses precisely such varying-basepoint multi-transversality for the index bound and includes supporting submersion lemmas. This is much closer to the current geometric regularity condition than the numerical bound alone. But the theorem statement giving an upper bound on the *number* of equal-length geodesics is logically insufficient by itself to assert the full-rank coincidence strata for *every k*. To replace the manuscript's transversality proof with a direct citation, it remains necessary to identify a KPP statement or argument giving simultaneous generic transversality for **all k>=2**, including the k=2 case and every minimizing branch configuration, and to distinguish residual genericity from the manuscript's open-dense condition. Until that exact strengthening is checked, keep the independent shorter proof and cite KPP as substantive precursor.
 
 **Novelty adjustment:** Do not claim the **mechanism** of distance-difference multi-transversality itself is entirely new; it is closely related, and in the absence of conjugate points locally equivalent, to KPP's varying-basepoint multi-exponential transversality. The GC consequence remains a separately supported candidate.
+
+
+## Stress test: square flat two-torus (2026-11-25)
+
+Let \(M=\mathbb R^2/\mathbb Z^2\) have its standard flat metric. Take \(x=[(0,0)]\), \(y=[(1/2,1/2)]\). There are exactly four shortest geodesics, represented by the four displacement vectors
+\[
+ w_{ij}=(1/2+i,1/2+j),\qquad i,j\in\{0,-1\}.
+\]
+For each label \(a\), in local Euclidean endpoint coordinates
+\[
+L_a(u,v)=\lVert v-u+a\rVert.
+\]
+Consequently every differential \(d(L_a-L_{a_0})\) vanishes on the two-dimensional diagonal translation directions \(\{(\delta u,\delta v):\delta u=\delta v\}\). In particular, its rank is at most two although \(k-1=3\) when \(k=4\). The square flat torus is **not regular** according to the manuscript's definition.
+
+This is a useful stress test, not a counterexample to the negative-curvature theorem. It proves that mere **finiteness** and even a small **number** of minimizing geodesics do not imply the required independence of endpoint length differences. It also warns against extending the genericity statement unchanged to the space of nonpositively curved metrics: on a two-torus nonpositive curvature forces flatness by Gauss--Bonnet, so the permitted metric perturbations are severely restricted.
+
+## Comparison with GC literature (2026-11-25)
+
+Mescher--Stegemeyer, *Geodesic complexity via fibered decompositions of cut loci*, J. Appl. Comput. Topol. 7 (2023), Theorem 3.2, bounds GC by one plus a sum of sectional categories on a **given fibered decomposition** of the total cut locus. It does not, from the theorem statement alone, imply the manuscript's dimension-only \(N+1\) selection bound for an arbitrary proper finite-valued subset of a covering. Whether the latter is contained in more general stratified-map or dimension-theoretic literature remains an open bibliographic question. The numerical claim GC=TC for generic negative-curvature metrics still requires this independent selection argument; prior-art absence is not established by the targeted search.
