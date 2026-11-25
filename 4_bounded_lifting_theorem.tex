@@ -73,15 +73,43 @@ cochains on $G^{q+1}$ invariant under the tuple stabilizer,
 with the sign representation accounting for odd vertex
 permutations.
 
-An invariant mean for an amenable stabilizer yields
-the usual norm-one contracting homotopy on the
-homogeneous bounded cochain complex in positive
-degree. Averaging over the finite permutation group,
-or equivalently working with its sign representation,
-preserves the norm bound. Choosing one representative
-per tuple orbit and transporting the contraction gives
-a uniform equivariant homotopy. Alternation forces
-cochains on tuples with repeated vertices to vanish.
+We make the contraction explicit. Let $K_\sigma$
+be the setwise stabilizer of the unordered vertex set
+of an ordered tuple $\sigma$, and let
+$\chi_\sigma:K_\sigma\to\{+1,-1\}$ be its permutation-sign
+character. Fix a left $K_\sigma$-invariant mean
+$m_\sigma$ on $\ell^\infty(G)$. Such a mean exists:
+$K_\sigma$ is amenable, and one may choose a mean on
+each $K_\sigma$-orbit of $G$ and then a mean on the
+set of these orbits. On the vertical complex associated
+with $\sigma$, cochains satisfy
+\[
+ f(kg_0,\ldots,kg_q)
+  =\chi_\sigma(k)f(g_0,\ldots,g_q).
+\]
+Define, for $q\geq1$,
+\[
+ (h_\sigma f)(g_0,\ldots,g_{q-1})
+  =m_\sigma\bigl(x\mapsto
+       f(x,g_0,\ldots,g_{q-1})\bigr).
+\]
+Left invariance of $m_\sigma$ shows that
+$h_\sigma f$ obeys the same $\chi_\sigma$-equivariance
+as $f$. The standard insertion identity
+\[
+ d_Gh_\sigma+h_\sigma d_G=\mathrm{id}
+\]
+holds in positive vertical degrees, and
+$\|h_\sigma\|\leq1$. The sign character is
+handled by equivariance; no additional
+averaging factor is required.
+
+Choose an orbit representative for each unordered
+tuple of distinct vertices and transport this
+construction equivariantly. The resulting
+homotopies have uniform norm at most one.
+Alternation forces cochains on tuples with
+repeated vertices to vanish.
 \end{proof}
 
 \begin{lemma}\label{lem:relative-primitive}
