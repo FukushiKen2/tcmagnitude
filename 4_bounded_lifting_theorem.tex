@@ -170,9 +170,15 @@ the Alexander--Whitney evaluation
 with the standard total-complex sign convention.
 
 Finally, if the restriction of $[\alpha]$ to $H$
-vanishes merely in cohomology, first subtract
-the coboundary of a bounded extension of a
-primitive on $H$. This produces a representative
+vanishes merely in cohomology, choose a bounded
+$H$-invariant primitive on $H$ and extend it to a
+bounded $G$-invariant homogeneous cochain as follows:
+on a tuple contained in a common left coset $gH$,
+translate the tuple by $g^{-1}$ and evaluate the
+primitive; on all other tuples, set the extension
+to zero. The construction is independent of the
+choice of $g$ and preserves the supremum bound.
+Subtracting its coboundary produces a representative
 whose restriction vanishes on the cochain level.
 Conversely any cocycle pulled back from $S$
 restricts to zero on $H$, since all its
