@@ -115,7 +115,7 @@ is well-defined and injective for $k\geq1$.
 
 \begin{proof}
 The definition is independent of boundaries by
-$T_k\partial=0$. Exactness of coinvariants applied to
+$T_k\partial=0$. Right exactness of coinvariants applied to
 Lemma~\ref{lem:exterior-quotient} identifies
 $\mathcal V_k$ with
 $C_k(Y)_G/\partial C_{k+1}(Y)_G$.
@@ -195,10 +195,18 @@ $T_k F_k=t_k$.
 
 Now $\widetilde B=\widetilde M\times\widetilde M$
 is contractible, and its $G$-action is free, so
-$B$ is a model of $BG$. An equivariant map
-$\widetilde B\to |Y|$ determines, after choosing
-a compatible equivariant cellular or singular
-chain approximation, a chain map to $C_*(Y)$.
+$B$ is a model of $BG$. Equip $B$ with a CW structure and $\widetilde B$ with
+its lifted free $G$-CW structure. An equivariant map
+$\widetilde B\to |Y|$ admits an equivariant cellular
+approximation: inductively apply relative cellular
+approximation on one representative of each orbit of
+cells and extend the homotopy by the $G$-action.
+The domain cells have trivial stabilizers, so this
+extension is well-defined. The equivariant homotopy
+descends to the quotient, and the resulting cellular
+chain map to $C_*(Y)$ induces $f_*$ after passing to
+coinvariants. Here we use the quotient CW structure
+described above.
 Because $|Y|$ is contractible, this chain map
 is chain-homotopic, through $G$-equivariant
 chain maps, to the composite of a comparison
